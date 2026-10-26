@@ -1,0 +1,145 @@
+window.QLOOM_EVIDENCE={
+  "source": "src/qloom/data/demo.json",
+  "source_sha256": "5ce46f8d79d29fefeea50bdfc4d05fecf53753f7eb7caa6883c6e8e2d20c4e70",
+  "input": "qaoa-5-13",
+  "device": "line-5",
+  "budget": 4,
+  "configurations": 24,
+  "best_id": "qloom-16",
+  "max_error": 2.9893669801409083e-16,
+  "initial_mapping": [
+    2,
+    4,
+    1,
+    3,
+    0
+  ],
+  "final_mapping": [
+    4,
+    2,
+    0,
+    3,
+    1
+  ],
+  "metrics": {
+    "two_qubit_gates": 32,
+    "single_qubit_gates": 25,
+    "depth": 25,
+    "duration_ns": 5345.0,
+    "estimated_success": 0.6711076480865988,
+    "objective": 36.19060580430938,
+    "compile_time_s": 0.10750583303160965
+  },
+  "history": [
+    {
+      "step": 0,
+      "kind": "layout",
+      "label": "interaction initial placement",
+      "qubits": [],
+      "mapping": [
+        2,
+        4,
+        1,
+        3,
+        0
+      ]
+    },
+    {
+      "step": 26,
+      "kind": "swap",
+      "label": "Route logical CX 4\u21921: SWAP 0\u21941",
+      "qubits": [
+        0,
+        1
+      ],
+      "mapping": [
+        2,
+        4,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "step": 29,
+      "kind": "swap",
+      "label": "Route logical CX 4\u21921: SWAP 3\u21944",
+      "qubits": [
+        3,
+        4
+      ],
+      "mapping": [
+        2,
+        3,
+        0,
+        4,
+        1
+      ]
+    },
+    {
+      "step": 32,
+      "kind": "swap",
+      "label": "Route logical CX 4\u21921: SWAP 2\u21943",
+      "qubits": [
+        2,
+        3
+      ],
+      "mapping": [
+        3,
+        2,
+        0,
+        4,
+        1
+      ]
+    },
+    {
+      "step": 39,
+      "kind": "swap",
+      "label": "Route logical CX 1\u21923: SWAP 3\u21944",
+      "qubits": [
+        3,
+        4
+      ],
+      "mapping": [
+        4,
+        2,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "step": 57,
+      "kind": "complete",
+      "label": "Native routing complete: 4 swaps",
+      "qubits": [],
+      "mapping": [
+        4,
+        2,
+        0,
+        3,
+        1
+      ]
+    }
+  ],
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "n_qubits": 5
+}
+;

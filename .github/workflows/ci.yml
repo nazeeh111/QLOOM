@@ -1,0 +1,47 @@
+name: verified CPU build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install '.[dev]'
+      - run: python -m pytest -q
+      - run: python -m build
+      - name: Fresh wheel smoke
+        run: |
+          python -m venv /tmp/qloom-wheel
+          /tmp/qloom-wheel/bin/pip install dist/*.whl
+          /tmp/qloom-wheel/bin/qloom compile examples/ghz.qasm --device line-5 --budget 2 --skip-baselines --skip-noise --out /tmp/qloom-proof
+      - uses: actions/upload-artifact@v4
+        with:
+          name: distributions-python-${{ matrix.python }}
+          path: dist/*
+  optional-simulators:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[dev,research]'
+      - name: External adapter regressions
+        env:
+          QLOOM_TEST_OPTIONAL_BASELINES: '1'
+        run: python -m pytest tests/test_baselines.py -q
+      - name: Noise and external compiler smoke
+        env:
+          QLOOM_BASELINE_TIMEOUT: '45'
+        run: python scripts/check_baselines.py

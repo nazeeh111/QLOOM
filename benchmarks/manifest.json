@@ -1,0 +1,1073 @@
+{
+  "circuits": [
+    {
+      "id": "test-random-line-4",
+      "family": "random",
+      "topology": "line",
+      "n_qubits": 4,
+      "seed": 10001,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "67918c342f983b59ecd0ca814e44476c504dbf4e92538e73fcca92dcceec90a5",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nry(0.8134854664667369) q[0];\nrz(-1.0148296085048982) q[1];\nrx(-1.236644152317067) q[2];\nry(-1.4130432847020857) q[3];\ncx q[2],q[0];\ncx q[2],q[3];\ncx q[3],q[0];\ncx q[3],q[2];\nrz(1.4236964285858826) q[0];\nrz(0.19393735978338122) q[1];\nrx(-3.0985319267653653) q[2];\nrx(-0.6237184318634419) q[3];\ncx q[1],q[2];\ncx q[0],q[3];\ncx q[3],q[2];\ncx q[3],q[1];",
+      "global_phase": 0.173,
+      "device": {
+        "name": "line-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-random-ring-5",
+      "family": "random",
+      "topology": "ring",
+      "n_qubits": 5,
+      "seed": 10002,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "bbaca2e8df90ce2ca39ad92d2f16ad0eba72b313db0656ffb800473af701ec24",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nrz(-1.570702277212843) q[0];\nry(0.310516535893882) q[1];\nrx(0.9196897391961769) q[2];\nrx(2.4318552624622023) q[3];\nrx(-0.7810048725074494) q[4];\ncx q[1],q[0];\ncx q[2],q[3];\ncx q[3],q[1];\ncx q[4],q[3];\ncx q[3],q[1];\nrz(-1.3513243004720756) q[0];\nrx(-1.5893849856623181) q[1];\nry(-0.7909280542109385) q[2];\nry(-1.117854532041433) q[3];\nrx(-1.034702042258857) q[4];\ncx q[3],q[2];\ncx q[3],q[2];\ncx q[3],q[1];\ncx q[2],q[1];\ncx q[1],q[0];",
+      "global_phase": 0.173,
+      "device": {
+        "name": "ring-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-random-grid-4",
+      "family": "random",
+      "topology": "grid",
+      "n_qubits": 4,
+      "seed": 10003,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "90c0c4d56d8612601d9ab1470bb8b38bf5f6c1146ab4b86e76cac484a303b55b",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nrx(1.4961789429071422) q[0];\nrz(3.1294196865011132) q[1];\nry(0.3991448160006609) q[2];\nrx(-1.1821506418244812) q[3];\ncx q[3],q[1];\ncx q[1],q[0];\ncx q[3],q[0];\ncx q[2],q[1];\nry(-1.3223082879044066) q[0];\nry(1.0742206619309724) q[1];\nrx(-2.7213340536556396) q[2];\nrz(-0.2773560041897365) q[3];\ncx q[3],q[1];\ncx q[1],q[0];\ncx q[2],q[3];\ncx q[3],q[2];",
+      "global_phase": 0.173,
+      "device": {
+        "name": "grid-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-random-star-5",
+      "family": "random",
+      "topology": "star",
+      "n_qubits": 5,
+      "seed": 10004,
+      "heldout_topology": true,
+      "heldout_family": false,
+      "sha256": "d198f11b00e4bcf116d8e58e7b7609d105a73be680021e19cedde667649d0f18",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nry(-1.243966682006722) q[0];\nrz(-0.25399947315866334) q[1];\nry(-1.2360888143483786) q[2];\nry(-1.640776258896496) q[3];\nrx(0.3152885575484045) q[4];\ncx q[4],q[1];\ncx q[1],q[3];\ncx q[1],q[3];\ncx q[3],q[1];\ncx q[1],q[3];\nrx(2.823729868144998) q[0];\nry(2.3934912417264242) q[1];\nrx(-3.1399748539547905) q[2];\nrz(-0.033616479463415894) q[3];\nrz(-1.6552349348144872) q[4];\ncx q[1],q[4];\ncx q[3],q[0];\ncx q[4],q[1];\ncx q[3],q[1];\ncx q[1],q[3];",
+      "global_phase": 0.173,
+      "device": {
+        "name": "star-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-ghz-line-5",
+      "family": "ghz",
+      "topology": "line",
+      "n_qubits": 5,
+      "seed": 10101,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "83cc3251ae4fef7ef14e16dbed2315016690f3396a43d825f0fb19fb439f8962",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\ncx q[0],q[1];\ncx q[0],q[2];\ncx q[0],q[3];\ncx q[0],q[4];",
+      "global_phase": 0.346,
+      "device": {
+        "name": "line-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-ghz-ring-4",
+      "family": "ghz",
+      "topology": "ring",
+      "n_qubits": 4,
+      "seed": 10102,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "efc64b5961e73e1316b5c2c2428e50f69fb672a9a784ef52cfdd6b3fe9e3378a",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\ncx q[0],q[1];\ncx q[0],q[2];\ncx q[0],q[3];",
+      "global_phase": 0.346,
+      "device": {
+        "name": "ring-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-ghz-grid-5",
+      "family": "ghz",
+      "topology": "grid",
+      "n_qubits": 5,
+      "seed": 10103,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "83cc3251ae4fef7ef14e16dbed2315016690f3396a43d825f0fb19fb439f8962",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\ncx q[0],q[1];\ncx q[0],q[2];\ncx q[0],q[3];\ncx q[0],q[4];",
+      "global_phase": 0.346,
+      "device": {
+        "name": "grid-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-ghz-star-4",
+      "family": "ghz",
+      "topology": "star",
+      "n_qubits": 4,
+      "seed": 10104,
+      "heldout_topology": true,
+      "heldout_family": true,
+      "sha256": "efc64b5961e73e1316b5c2c2428e50f69fb672a9a784ef52cfdd6b3fe9e3378a",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\ncx q[0],q[1];\ncx q[0],q[2];\ncx q[0],q[3];",
+      "global_phase": 0.346,
+      "device": {
+        "name": "star-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-mirror-line-4",
+      "family": "mirror",
+      "topology": "line",
+      "n_qubits": 4,
+      "seed": 10201,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "27f48259dc716663c43e3e4a45c22bb9963553d998b3365f5a1d639ad1e54931",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\ncx q[1],q[0];\nrz(-0.40900521232143294) q[2];\ncx q[1],q[0];\ncx q[3],q[0];\nrz(-1.101838374852342) q[1];\ncx q[3],q[0];\nry(0.7) q[3];",
+      "global_phase": 0.5189999999999999,
+      "device": {
+        "name": "line-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-mirror-ring-5",
+      "family": "mirror",
+      "topology": "ring",
+      "n_qubits": 5,
+      "seed": 10202,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "fb4193e158963f5f756c0e664155cf42391fbb69c018d4efdcfae9ed24d44766",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\ncx q[4],q[1];\nrz(0.34247537363702385) q[0];\ncx q[4],q[1];\ncx q[0],q[4];\nrz(-0.8222430742803049) q[1];\ncx q[0],q[4];\nry(0.7) q[4];",
+      "global_phase": 0.5189999999999999,
+      "device": {
+        "name": "ring-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-mirror-grid-4",
+      "family": "mirror",
+      "topology": "grid",
+      "n_qubits": 4,
+      "seed": 10203,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "1246d870538d5805bcb6d4f140aff5ca15f4ce6ac13151b2a9ff962b79676fb8",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\ncx q[0],q[2];\nrz(-1.1126063855443973) q[1];\ncx q[0],q[2];\ncx q[1],q[0];\nrz(0.8179971603341394) q[2];\ncx q[1],q[0];\nry(0.7) q[3];",
+      "global_phase": 0.5189999999999999,
+      "device": {
+        "name": "grid-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-mirror-star-5",
+      "family": "mirror",
+      "topology": "star",
+      "n_qubits": 5,
+      "seed": 10204,
+      "heldout_topology": true,
+      "heldout_family": false,
+      "sha256": "57ffaf19c75fb1b3a58cf4d7255aa3679afc125ffc856b559f33439cd21fad25",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\ncx q[2],q[4];\nrz(-0.23265719908974125) q[0];\ncx q[2],q[4];\ncx q[3],q[2];\nrz(0.6005966408650241) q[0];\ncx q[3],q[2];\nry(0.7) q[4];",
+      "global_phase": 0.5189999999999999,
+      "device": {
+        "name": "star-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-qaoa-line-5",
+      "family": "qaoa",
+      "topology": "line",
+      "n_qubits": 5,
+      "seed": 10301,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "d380dc415f243093361df0b5c27b52f18d336a030300408fd2813ca3c67eb985",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\nh q[1];\nh q[2];\nh q[3];\nh q[4];\ncx q[0],q[2];\nrz(0.2) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.2) q[3];\ncx q[1],q[3];\ncx q[2],q[4];\nrz(0.2) q[4];\ncx q[2],q[4];\ncx q[3],q[0];\nrz(0.2) q[0];\ncx q[3],q[0];\ncx q[4],q[1];\nrz(0.2) q[1];\ncx q[4],q[1];\nrx(0.4) q[0];\nrx(0.4) q[1];\nrx(0.4) q[2];\nrx(0.4) q[3];\nrx(0.4) q[4];\ncx q[0],q[2];\nrz(0.30000000000000004) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.30000000000000004) q[3];\ncx q[1],q[3];\ncx q[2],q[4];\nrz(0.30000000000000004) q[4];\ncx q[2],q[4];\ncx q[3],q[0];\nrz(0.30000000000000004) q[0];\ncx q[3],q[0];\ncx q[4],q[1];\nrz(0.30000000000000004) q[1];\ncx q[4],q[1];\nrx(0.47000000000000003) q[0];\nrx(0.47000000000000003) q[1];\nrx(0.47000000000000003) q[2];\nrx(0.47000000000000003) q[3];\nrx(0.47000000000000003) q[4];\ncx q[0],q[2];\nrz(0.4) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.4) q[3];\ncx q[1],q[3];\ncx q[2],q[4];\nrz(0.4) q[4];\ncx q[2],q[4];\ncx q[3],q[0];\nrz(0.4) q[0];\ncx q[3],q[0];\ncx q[4],q[1];\nrz(0.4) q[1];\ncx q[4],q[1];\nrx(0.54) q[0];\nrx(0.54) q[1];\nrx(0.54) q[2];\nrx(0.54) q[3];\nrx(0.54) q[4];",
+      "global_phase": 0.692,
+      "device": {
+        "name": "line-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-qaoa-ring-4",
+      "family": "qaoa",
+      "topology": "ring",
+      "n_qubits": 4,
+      "seed": 10302,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "380e4e93b399a40cab055968ac35edafca9f98bb3dcd05c6abf3f7c8ac9e1947",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\nh q[1];\nh q[2];\nh q[3];\ncx q[0],q[2];\nrz(0.2) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.2) q[3];\ncx q[1],q[3];\ncx q[2],q[0];\nrz(0.2) q[0];\ncx q[2],q[0];\ncx q[3],q[1];\nrz(0.2) q[1];\ncx q[3],q[1];\nrx(0.4) q[0];\nrx(0.4) q[1];\nrx(0.4) q[2];\nrx(0.4) q[3];\ncx q[0],q[2];\nrz(0.30000000000000004) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.30000000000000004) q[3];\ncx q[1],q[3];\ncx q[2],q[0];\nrz(0.30000000000000004) q[0];\ncx q[2],q[0];\ncx q[3],q[1];\nrz(0.30000000000000004) q[1];\ncx q[3],q[1];\nrx(0.47000000000000003) q[0];\nrx(0.47000000000000003) q[1];\nrx(0.47000000000000003) q[2];\nrx(0.47000000000000003) q[3];\ncx q[0],q[2];\nrz(0.4) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.4) q[3];\ncx q[1],q[3];\ncx q[2],q[0];\nrz(0.4) q[0];\ncx q[2],q[0];\ncx q[3],q[1];\nrz(0.4) q[1];\ncx q[3],q[1];\nrx(0.54) q[0];\nrx(0.54) q[1];\nrx(0.54) q[2];\nrx(0.54) q[3];",
+      "global_phase": 0.692,
+      "device": {
+        "name": "ring-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-qaoa-grid-5",
+      "family": "qaoa",
+      "topology": "grid",
+      "n_qubits": 5,
+      "seed": 10303,
+      "heldout_topology": false,
+      "heldout_family": false,
+      "sha256": "d380dc415f243093361df0b5c27b52f18d336a030300408fd2813ca3c67eb985",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\nh q[1];\nh q[2];\nh q[3];\nh q[4];\ncx q[0],q[2];\nrz(0.2) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.2) q[3];\ncx q[1],q[3];\ncx q[2],q[4];\nrz(0.2) q[4];\ncx q[2],q[4];\ncx q[3],q[0];\nrz(0.2) q[0];\ncx q[3],q[0];\ncx q[4],q[1];\nrz(0.2) q[1];\ncx q[4],q[1];\nrx(0.4) q[0];\nrx(0.4) q[1];\nrx(0.4) q[2];\nrx(0.4) q[3];\nrx(0.4) q[4];\ncx q[0],q[2];\nrz(0.30000000000000004) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.30000000000000004) q[3];\ncx q[1],q[3];\ncx q[2],q[4];\nrz(0.30000000000000004) q[4];\ncx q[2],q[4];\ncx q[3],q[0];\nrz(0.30000000000000004) q[0];\ncx q[3],q[0];\ncx q[4],q[1];\nrz(0.30000000000000004) q[1];\ncx q[4],q[1];\nrx(0.47000000000000003) q[0];\nrx(0.47000000000000003) q[1];\nrx(0.47000000000000003) q[2];\nrx(0.47000000000000003) q[3];\nrx(0.47000000000000003) q[4];\ncx q[0],q[2];\nrz(0.4) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.4) q[3];\ncx q[1],q[3];\ncx q[2],q[4];\nrz(0.4) q[4];\ncx q[2],q[4];\ncx q[3],q[0];\nrz(0.4) q[0];\ncx q[3],q[0];\ncx q[4],q[1];\nrz(0.4) q[1];\ncx q[4],q[1];\nrx(0.54) q[0];\nrx(0.54) q[1];\nrx(0.54) q[2];\nrx(0.54) q[3];\nrx(0.54) q[4];",
+      "global_phase": 0.692,
+      "device": {
+        "name": "grid-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-qaoa-star-4",
+      "family": "qaoa",
+      "topology": "star",
+      "n_qubits": 4,
+      "seed": 10304,
+      "heldout_topology": true,
+      "heldout_family": false,
+      "sha256": "380e4e93b399a40cab055968ac35edafca9f98bb3dcd05c6abf3f7c8ac9e1947",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\nh q[1];\nh q[2];\nh q[3];\ncx q[0],q[2];\nrz(0.2) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.2) q[3];\ncx q[1],q[3];\ncx q[2],q[0];\nrz(0.2) q[0];\ncx q[2],q[0];\ncx q[3],q[1];\nrz(0.2) q[1];\ncx q[3],q[1];\nrx(0.4) q[0];\nrx(0.4) q[1];\nrx(0.4) q[2];\nrx(0.4) q[3];\ncx q[0],q[2];\nrz(0.30000000000000004) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.30000000000000004) q[3];\ncx q[1],q[3];\ncx q[2],q[0];\nrz(0.30000000000000004) q[0];\ncx q[2],q[0];\ncx q[3],q[1];\nrz(0.30000000000000004) q[1];\ncx q[3],q[1];\nrx(0.47000000000000003) q[0];\nrx(0.47000000000000003) q[1];\nrx(0.47000000000000003) q[2];\nrx(0.47000000000000003) q[3];\ncx q[0],q[2];\nrz(0.4) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.4) q[3];\ncx q[1],q[3];\ncx q[2],q[0];\nrz(0.4) q[0];\ncx q[2],q[0];\ncx q[3],q[1];\nrz(0.4) q[1];\ncx q[3],q[1];\nrx(0.54) q[0];\nrx(0.54) q[1];\nrx(0.54) q[2];\nrx(0.54) q[3];",
+      "global_phase": 0.692,
+      "device": {
+        "name": "star-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-qft-line-4",
+      "family": "qft",
+      "topology": "line",
+      "n_qubits": 4,
+      "seed": 10401,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "2c202a60d9b593648de78e478960a6b867890fb9ddeb5710ae0c93bc1b3bd2a1",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\np(pi/4) q[0];\ncx q[0],q[1];\np(-pi/4) q[1];\ncx q[0],q[1];\np(pi/4) q[1];\np(pi/8) q[0];\ncx q[0],q[2];\np(-pi/8) q[2];\ncx q[0],q[2];\np(pi/8) q[2];\np(pi/16) q[0];\ncx q[0],q[3];\np(-pi/16) q[3];\ncx q[0],q[3];\np(pi/16) q[3];\nh q[1];\np(pi/4) q[1];\ncx q[1],q[2];\np(-pi/4) q[2];\ncx q[1],q[2];\np(pi/4) q[2];\np(pi/8) q[1];\ncx q[1],q[3];\np(-pi/8) q[3];\ncx q[1],q[3];\np(pi/8) q[3];\nh q[2];\np(pi/4) q[2];\ncx q[2],q[3];\np(-pi/4) q[3];\ncx q[2],q[3];\np(pi/4) q[3];\nh q[3];",
+      "global_phase": 0.865,
+      "device": {
+        "name": "line-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-qft-ring-5",
+      "family": "qft",
+      "topology": "ring",
+      "n_qubits": 5,
+      "seed": 10402,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "e56092192dba2df41ee70eaffa21e4acb5bb8421fe3f6ad9fa7ba70b1823aada",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\np(pi/4) q[0];\ncx q[0],q[1];\np(-pi/4) q[1];\ncx q[0],q[1];\np(pi/4) q[1];\np(pi/8) q[0];\ncx q[0],q[2];\np(-pi/8) q[2];\ncx q[0],q[2];\np(pi/8) q[2];\np(pi/16) q[0];\ncx q[0],q[3];\np(-pi/16) q[3];\ncx q[0],q[3];\np(pi/16) q[3];\np(pi/32) q[0];\ncx q[0],q[4];\np(-pi/32) q[4];\ncx q[0],q[4];\np(pi/32) q[4];\nh q[1];\np(pi/4) q[1];\ncx q[1],q[2];\np(-pi/4) q[2];\ncx q[1],q[2];\np(pi/4) q[2];\np(pi/8) q[1];\ncx q[1],q[3];\np(-pi/8) q[3];\ncx q[1],q[3];\np(pi/8) q[3];\np(pi/16) q[1];\ncx q[1],q[4];\np(-pi/16) q[4];\ncx q[1],q[4];\np(pi/16) q[4];\nh q[2];\np(pi/4) q[2];\ncx q[2],q[3];\np(-pi/4) q[3];\ncx q[2],q[3];\np(pi/4) q[3];\np(pi/8) q[2];\ncx q[2],q[4];\np(-pi/8) q[4];\ncx q[2],q[4];\np(pi/8) q[4];\nh q[3];\np(pi/4) q[3];\ncx q[3],q[4];\np(-pi/4) q[4];\ncx q[3],q[4];\np(pi/4) q[4];\nh q[4];",
+      "global_phase": 0.865,
+      "device": {
+        "name": "ring-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-qft-grid-4",
+      "family": "qft",
+      "topology": "grid",
+      "n_qubits": 4,
+      "seed": 10403,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "2c202a60d9b593648de78e478960a6b867890fb9ddeb5710ae0c93bc1b3bd2a1",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\np(pi/4) q[0];\ncx q[0],q[1];\np(-pi/4) q[1];\ncx q[0],q[1];\np(pi/4) q[1];\np(pi/8) q[0];\ncx q[0],q[2];\np(-pi/8) q[2];\ncx q[0],q[2];\np(pi/8) q[2];\np(pi/16) q[0];\ncx q[0],q[3];\np(-pi/16) q[3];\ncx q[0],q[3];\np(pi/16) q[3];\nh q[1];\np(pi/4) q[1];\ncx q[1],q[2];\np(-pi/4) q[2];\ncx q[1],q[2];\np(pi/4) q[2];\np(pi/8) q[1];\ncx q[1],q[3];\np(-pi/8) q[3];\ncx q[1],q[3];\np(pi/8) q[3];\nh q[2];\np(pi/4) q[2];\ncx q[2],q[3];\np(-pi/4) q[3];\ncx q[2],q[3];\np(pi/4) q[3];\nh q[3];",
+      "global_phase": 0.865,
+      "device": {
+        "name": "grid-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-qft-star-5",
+      "family": "qft",
+      "topology": "star",
+      "n_qubits": 5,
+      "seed": 10404,
+      "heldout_topology": true,
+      "heldout_family": true,
+      "sha256": "e56092192dba2df41ee70eaffa21e4acb5bb8421fe3f6ad9fa7ba70b1823aada",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\np(pi/4) q[0];\ncx q[0],q[1];\np(-pi/4) q[1];\ncx q[0],q[1];\np(pi/4) q[1];\np(pi/8) q[0];\ncx q[0],q[2];\np(-pi/8) q[2];\ncx q[0],q[2];\np(pi/8) q[2];\np(pi/16) q[0];\ncx q[0],q[3];\np(-pi/16) q[3];\ncx q[0],q[3];\np(pi/16) q[3];\np(pi/32) q[0];\ncx q[0],q[4];\np(-pi/32) q[4];\ncx q[0],q[4];\np(pi/32) q[4];\nh q[1];\np(pi/4) q[1];\ncx q[1],q[2];\np(-pi/4) q[2];\ncx q[1],q[2];\np(pi/4) q[2];\np(pi/8) q[1];\ncx q[1],q[3];\np(-pi/8) q[3];\ncx q[1],q[3];\np(pi/8) q[3];\np(pi/16) q[1];\ncx q[1],q[4];\np(-pi/16) q[4];\ncx q[1],q[4];\np(pi/16) q[4];\nh q[2];\np(pi/4) q[2];\ncx q[2],q[3];\np(-pi/4) q[3];\ncx q[2],q[3];\np(pi/4) q[3];\np(pi/8) q[2];\ncx q[2],q[4];\np(-pi/8) q[4];\ncx q[2],q[4];\np(pi/8) q[4];\nh q[3];\np(pi/4) q[3];\ncx q[3],q[4];\np(-pi/4) q[4];\ncx q[3],q[4];\np(pi/4) q[4];\nh q[4];",
+      "global_phase": 0.865,
+      "device": {
+        "name": "star-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-starphase-line-5",
+      "family": "starphase",
+      "topology": "line",
+      "n_qubits": 5,
+      "seed": 10501,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "74a397c64ed5731862918c21662955286e71df04ff415a70666492a9699153c9",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\ncx q[0],q[4];\nrz(-0.14981076624649847) q[0];\ncx q[0],q[4];\ncx q[0],q[3];\nrz(0.36591568250096485) q[0];\ncx q[0],q[3];\ncx q[0],q[2];\nrz(0.7109149034860718) q[0];\ncx q[0],q[2];\ncx q[0],q[1];\nrz(0.37960615885161997) q[0];\ncx q[0],q[1];\nry(0.29893364817403456) q[0];\nry(-0.5525065526633481) q[1];\nry(-0.18859398501498736) q[2];\nry(0.8747046514575616) q[3];\nry(-0.3536248048749253) q[4];",
+      "global_phase": 1.0379999999999998,
+      "device": {
+        "name": "line-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-starphase-ring-4",
+      "family": "starphase",
+      "topology": "ring",
+      "n_qubits": 4,
+      "seed": 10502,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "c408781177a40576f392058c4f5d1b2a5dea7c1e534cb2a34c2767b7a960e469",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\ncx q[0],q[3];\nrz(-0.9760600900908578) q[0];\ncx q[0],q[3];\ncx q[0],q[2];\nrz(0.05964739816903086) q[0];\ncx q[0],q[2];\ncx q[0],q[1];\nrz(-0.6798791591177473) q[0];\ncx q[0],q[1];\nry(0.30841988836356404) q[0];\nry(-0.8725390459740592) q[1];\nry(0.3226669653573295) q[2];\nry(0.09709394697105256) q[3];",
+      "global_phase": 1.0379999999999998,
+      "device": {
+        "name": "ring-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-starphase-grid-5",
+      "family": "starphase",
+      "topology": "grid",
+      "n_qubits": 5,
+      "seed": 10503,
+      "heldout_topology": false,
+      "heldout_family": true,
+      "sha256": "07cd1088a1979e970f65b39f873fcdf0da2d8cc378c743c48796935a32a2ce26",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\ncx q[0],q[4];\nrz(-0.19700870254417002) q[0];\ncx q[0],q[4];\ncx q[0],q[3];\nrz(0.20203352616727055) q[0];\ncx q[0],q[3];\ncx q[0],q[2];\nrz(-0.9084428550255401) q[0];\ncx q[0],q[2];\ncx q[0],q[1];\nrz(0.009279122461625322) q[0];\ncx q[0],q[1];\nry(-0.9463355323440339) q[0];\nry(0.8095653940275911) q[1];\nry(0.017754868777864363) q[2];\nry(-0.47514706228722936) q[3];\nry(0.6135106775756904) q[4];",
+      "global_phase": 1.0379999999999998,
+      "device": {
+        "name": "grid-5",
+        "n_qubits": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    },
+    {
+      "id": "test-starphase-star-4",
+      "family": "starphase",
+      "topology": "star",
+      "n_qubits": 4,
+      "seed": 10504,
+      "heldout_topology": true,
+      "heldout_family": true,
+      "sha256": "d87762b5d0fa99fd18a0c7ba5c846ad42ad0fdadb4fb88fe0ce2689fe40d2e3f",
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[4];\nh q[0];\ncx q[0],q[3];\nrz(-0.27682075326713274) q[0];\ncx q[0],q[3];\ncx q[0],q[2];\nrz(-0.3843647267453558) q[0];\ncx q[0],q[2];\ncx q[0],q[1];\nrz(-0.7527379012505355) q[0];\ncx q[0],q[1];\nry(-0.49479317963561864) q[0];\nry(0.4132548868369934) q[1];\nry(0.4532703929090234) q[2];\nry(-0.9391766203197096) q[3];",
+      "global_phase": 1.0379999999999998,
+      "device": {
+        "name": "star-4",
+        "n_qubits": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "single_error": 0.0005,
+        "two_error": 0.012,
+        "readout_error": 0.018,
+        "single_duration_ns": 35,
+        "two_duration_ns": 300,
+        "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+        "basis_gates": [
+          "u",
+          "cx"
+        ]
+      }
+    }
+  ],
+  "training_hashes_disjoint": true,
+  "bqskit_subset": [
+    "test-mirror-star-5",
+    "test-qft-ring-5",
+    "test-random-line-4",
+    "test-starphase-grid-5"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "budget": 4
+}

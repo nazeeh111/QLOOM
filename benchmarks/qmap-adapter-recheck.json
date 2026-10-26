@@ -1,0 +1,39 @@
+{
+  "reason": "Exact identity marker pair preserves all physical wire identities across QMAP idle-wire conversion. Default dynamic policy unchanged. QFT-ring5 native mapping metadata rejections retained.",
+  "initial_results_sha256": "c7575c40ad07a37bd1252c5ad158df499bd9b76948be98e1f459bd491bbf5582",
+  "rechecked_rows": [
+    {
+      "circuit_id": "test-mirror-ring-5",
+      "seed": 0,
+      "max_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-mirror-ring-5",
+      "seed": 1,
+      "max_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-mirror-ring-5",
+      "seed": 2,
+      "max_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-mirror-star-5",
+      "seed": 0,
+      "max_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-mirror-star-5",
+      "seed": 1,
+      "max_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-mirror-star-5",
+      "seed": 2,
+      "max_error": 1.5700924586837752e-16
+    }
+  ],
+  "sum_invocation_wall_time_s": 32.03074249997735,
+  "adapter_source_sha256": "f04ee821d252091944126b2789f0d05733ea3428412e6bddd4df3eb258b0f16e",
+  "worker_source_sha256": "3969d044af8dc0071753b088cde5bf68ae3c1bdaba9ed49070036ada20d4f58c"
+}

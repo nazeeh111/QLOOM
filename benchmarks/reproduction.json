@@ -1,0 +1,597 @@
+{
+  "schema_version": "1.0",
+  "passed": true,
+  "learned_search_runs_reproduced": 72,
+  "heldout_circuit_device_instances": 24,
+  "fresh_verified_search_candidates": 288,
+  "retrained_unique_circuits": 120,
+  "retrained_verified_candidates": 2880,
+  "forest_parameters_exact": true,
+  "feature_schema_exact": true,
+  "original_model_sha256": "f2bbaa6aedb2754410a16a2e2a2028b1b5ef867eb027f74816d3b5df4f25d613",
+  "reproduced_model_sha256": "2577607e7e407276e8cac255d7525ac9d0c61e9b9b111c0d8ceb2a1e375e9d76",
+  "original_training_source_sha256": "3fa9398b8c3df99de300e7344760ac4defce2f24735bbe3d19840b6023a4148b",
+  "reproduction_source_sha256": "6b25c5dad95f1379775e237c8731c697428b8713f8c9340ad94699d80a8786c6",
+  "model_hash_note": "Metadata hashes and timing-bearing label hashes differ; all 48 exported tree parameter arrays match exactly.",
+  "timing_note": "Wall time is measured evidence and intentionally excluded from deterministic equality.",
+  "external_note": "External compiler baseline rows were measured in the full experiment; this reproduction reruns native search and training only.",
+  "elapsed_s": 241.79697358293924,
+  "checks": [
+    {
+      "circuit_id": "test-random-line-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.9893669801409083e-16
+    },
+    {
+      "circuit_id": "test-random-line-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.9893669801409083e-16
+    },
+    {
+      "circuit_id": "test-random-line-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.9893669801409083e-16
+    },
+    {
+      "circuit_id": "test-random-ring-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.8305244335018383e-16
+    },
+    {
+      "circuit_id": "test-random-ring-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.8305244335018383e-16
+    },
+    {
+      "circuit_id": "test-random-ring-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.8305244335018383e-16
+    },
+    {
+      "circuit_id": "test-random-grid-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.3714374201337736e-16
+    },
+    {
+      "circuit_id": "test-random-grid-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.3714374201337736e-16
+    },
+    {
+      "circuit_id": "test-random-grid-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.3714374201337736e-16
+    },
+    {
+      "circuit_id": "test-random-star-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-random-star-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-random-star-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-ghz-line-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-line-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-line-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-ring-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-ring-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-ring-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-grid-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-grid-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-grid-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-star-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-star-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-ghz-star-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.2412670766236366e-16
+    },
+    {
+      "circuit_id": "test-mirror-line-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-mirror-line-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-mirror-line-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-mirror-ring-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-mirror-ring-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-mirror-ring-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.482534153247273e-16
+    },
+    {
+      "circuit_id": "test-mirror-grid-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.3714374201337736e-16
+    },
+    {
+      "circuit_id": "test-mirror-grid-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.3714374201337736e-16
+    },
+    {
+      "circuit_id": "test-mirror-grid-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.3714374201337736e-16
+    },
+    {
+      "circuit_id": "test-mirror-star-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.2887833992611187e-16
+    },
+    {
+      "circuit_id": "test-mirror-star-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.2887833992611187e-16
+    },
+    {
+      "circuit_id": "test-mirror-star-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.2887833992611187e-16
+    },
+    {
+      "circuit_id": "test-qaoa-line-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 8.711006819470244e-16
+    },
+    {
+      "circuit_id": "test-qaoa-line-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 8.711006819470244e-16
+    },
+    {
+      "circuit_id": "test-qaoa-line-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 8.711006819470244e-16
+    },
+    {
+      "circuit_id": "test-qaoa-ring-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 7.285508168090419e-16
+    },
+    {
+      "circuit_id": "test-qaoa-ring-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 7.285508168090419e-16
+    },
+    {
+      "circuit_id": "test-qaoa-ring-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 7.285508168090419e-16
+    },
+    {
+      "circuit_id": "test-qaoa-grid-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 8.711006819470244e-16
+    },
+    {
+      "circuit_id": "test-qaoa-grid-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 8.711006819470244e-16
+    },
+    {
+      "circuit_id": "test-qaoa-grid-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 8.711006819470244e-16
+    },
+    {
+      "circuit_id": "test-qaoa-star-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 7.285508168090419e-16
+    },
+    {
+      "circuit_id": "test-qaoa-star-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 7.285508168090419e-16
+    },
+    {
+      "circuit_id": "test-qaoa-star-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 7.285508168090419e-16
+    },
+    {
+      "circuit_id": "test-qft-line-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.514331927660129e-16
+    },
+    {
+      "circuit_id": "test-qft-line-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.514331927660129e-16
+    },
+    {
+      "circuit_id": "test-qft-line-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.514331927660129e-16
+    },
+    {
+      "circuit_id": "test-qft-ring-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.779024842816778e-16
+    },
+    {
+      "circuit_id": "test-qft-ring-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.779024842816778e-16
+    },
+    {
+      "circuit_id": "test-qft-ring-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.779024842816778e-16
+    },
+    {
+      "circuit_id": "test-qft-grid-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.514331927660129e-16
+    },
+    {
+      "circuit_id": "test-qft-grid-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.514331927660129e-16
+    },
+    {
+      "circuit_id": "test-qft-grid-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.514331927660129e-16
+    },
+    {
+      "circuit_id": "test-qft-star-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.779024842816778e-16
+    },
+    {
+      "circuit_id": "test-qft-star-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.779024842816778e-16
+    },
+    {
+      "circuit_id": "test-qft-star-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.779024842816778e-16
+    },
+    {
+      "circuit_id": "test-starphase-line-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-starphase-line-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-starphase-line-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-starphase-ring-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.6653345369377348e-16
+    },
+    {
+      "circuit_id": "test-starphase-ring-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.6653345369377348e-16
+    },
+    {
+      "circuit_id": "test-starphase-ring-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.6653345369377348e-16
+    },
+    {
+      "circuit_id": "test-starphase-grid-5",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.7755575615628914e-16
+    },
+    {
+      "circuit_id": "test-starphase-grid-5",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.7755575615628914e-16
+    },
+    {
+      "circuit_id": "test-starphase-grid-5",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 2.7755575615628914e-16
+    },
+    {
+      "circuit_id": "test-starphase-star-4",
+      "seed": 0,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-starphase-star-4",
+      "seed": 1,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    },
+    {
+      "circuit_id": "test-starphase-star-4",
+      "seed": 2,
+      "metrics_exact": true,
+      "selection_exact": true,
+      "verified_candidates": 4,
+      "max_equivalence_error": 1.5700924586837752e-16
+    }
+  ]
+}

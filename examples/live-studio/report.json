@@ -1,0 +1,1051 @@
+{
+  "schema_version": "1.0",
+  "seed": 7,
+  "strategy": "learned",
+  "budget": 2,
+  "device": {
+    "name": "line-3",
+    "n_qubits": 3,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "single_error": 0.0005,
+    "two_error": 0.012,
+    "readout_error": 0.018,
+    "single_duration_ns": 35,
+    "two_duration_ns": 300,
+    "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+    "basis_gates": [
+      "u",
+      "cx"
+    ]
+  },
+  "input": {
+    "name": "circuit-51",
+    "n_qubits": 3,
+    "n_clbits": 3,
+    "operations": [
+      {
+        "gate": "h",
+        "qubits": [
+          0
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          0,
+          2
+        ],
+        "params": []
+      },
+      {
+        "gate": "ry",
+        "qubits": [
+          1
+        ],
+        "params": [
+          0.31
+        ]
+      }
+    ],
+    "measurements": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "global_phase": 0,
+    "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nh q[0];\ncx q[0],q[2];\nry(0.31) q[1];\nmeasure q[0] -> c[2];\nmeasure q[1] -> c[1];\nmeasure q[2] -> c[0];"
+  },
+  "candidates": [
+    {
+      "id": "qloom-07",
+      "config": {
+        "layout": "central",
+        "routing": "control",
+        "lookahead": 6,
+        "rewrite": true
+      },
+      "metrics": {
+        "two_qubit_gates": 1,
+        "single_qubit_gates": 2,
+        "depth": 2,
+        "duration_ns": 335,
+        "estimated_success": 0.9870122470000001,
+        "objective": 1.1845826505410697,
+        "compile_time_s": 0.004005666938610375
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 1.401642967028923e-16,
+        "global_phase_error": 6.123233995736766e-17,
+        "randomized_max_error": 1.2412670766236366e-16,
+        "trials": 8,
+        "tolerance": 1e-8
+      },
+      "initial_mapping": [
+        1,
+        2,
+        0
+      ],
+      "final_mapping": [
+        1,
+        2,
+        0
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.31,
+            0,
+            0
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        }
+      ],
+      "history": [
+        {
+          "step": 0,
+          "kind": "layout",
+          "label": "central initial placement",
+          "qubits": [],
+          "mapping": [
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "step": 3,
+          "kind": "complete",
+          "label": "Native routing complete: 0 swaps",
+          "qubits": [],
+          "mapping": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nu(pi/2,0,pi) q[1];\nu(0.31,0,0) q[2];\ncx q[1],q[0];\nmeasure q[1] -> c[2];\nmeasure q[2] -> c[1];\nmeasure q[0] -> c[0];",
+      "global_phase": 0,
+      "model_prediction": 0.1937905814172308,
+      "elapsed_s": 0.007124916999600828
+    },
+    {
+      "id": "qloom-09",
+      "config": {
+        "layout": "central",
+        "routing": "target",
+        "lookahead": 6,
+        "rewrite": true
+      },
+      "metrics": {
+        "two_qubit_gates": 1,
+        "single_qubit_gates": 2,
+        "depth": 2,
+        "duration_ns": 335,
+        "estimated_success": 0.9870122470000001,
+        "objective": 1.1845826505410697,
+        "compile_time_s": 0.0007390830432996154
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 1.401642967028923e-16,
+        "global_phase_error": 6.123233995736766e-17,
+        "randomized_max_error": 1.2412670766236366e-16,
+        "trials": 8,
+        "tolerance": 1e-8
+      },
+      "initial_mapping": [
+        1,
+        2,
+        0
+      ],
+      "final_mapping": [
+        1,
+        2,
+        0
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.31,
+            0,
+            0
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        }
+      ],
+      "history": [
+        {
+          "step": 0,
+          "kind": "layout",
+          "label": "central initial placement",
+          "qubits": [],
+          "mapping": [
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "step": 3,
+          "kind": "complete",
+          "label": "Native routing complete: 0 swaps",
+          "qubits": [],
+          "mapping": [
+            1,
+            2,
+            0
+          ]
+        }
+      ],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nu(pi/2,0,pi) q[1];\nu(0.31,0,0) q[2];\ncx q[1],q[0];\nmeasure q[1] -> c[2];\nmeasure q[2] -> c[1];\nmeasure q[0] -> c[0];",
+      "global_phase": 0,
+      "model_prediction": 0.1937905814172308,
+      "elapsed_s": 0.008492458960972726
+    }
+  ],
+  "best_id": "qloom-07",
+  "pareto_ids": [
+    "qloom-07",
+    "qloom-09"
+  ],
+  "baselines": [
+    {
+      "id": "qiskit-0",
+      "config": {
+        "compiler": "qiskit-0"
+      },
+      "metrics": {
+        "two_qubit_gates": 4,
+        "single_qubit_gates": 2,
+        "depth": 5,
+        "duration_ns": 1235,
+        "estimated_success": 0.9519044898415413,
+        "objective": 4.594324600163532,
+        "compile_time_s": 0.0439753329847008
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 1.401642967028923e-16,
+        "global_phase_error": 6.123233995736766e-17,
+        "randomized_max_error": 1.2412670766236366e-16,
+        "trials": 8,
+        "tolerance": 1e-8
+      },
+      "initial_mapping": [
+        0,
+        1,
+        2
+      ],
+      "final_mapping": [
+        0,
+        2,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.31,
+            0,
+            0
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nu(pi/2,0,pi) q[0];\nu(0.31,0,0) q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[0],q[1];\nmeasure q[0] -> c[2];\nmeasure q[2] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 0,
+      "model_prediction": null,
+      "elapsed_s": 0.0439753329847008,
+      "name": "qiskit-0",
+      "status": "ok",
+      "metadata": {
+        "name": "qiskit-0",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 3,
+        "phase_alignment": "none; independent verifier must check phase",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "in-process compiler call including optional dependency imports",
+        "version": "2.6.1",
+        "optimization_level": 0,
+        "elapsed_s": 0.0439753329847008
+      },
+      "global_phase_correction": 0
+    },
+    {
+      "id": "qiskit-1",
+      "config": {
+        "compiler": "qiskit-1"
+      },
+      "metrics": {
+        "two_qubit_gates": 1,
+        "single_qubit_gates": 2,
+        "depth": 2,
+        "duration_ns": 335,
+        "estimated_success": 0.9870122470000001,
+        "objective": 1.1845826505410697,
+        "compile_time_s": 0.01853158394806087
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 1.401642967028923e-16,
+        "global_phase_error": 6.123233995736766e-17,
+        "randomized_max_error": 1.2412670766236366e-16,
+        "trials": 8,
+        "tolerance": 1e-8
+      },
+      "initial_mapping": [
+        0,
+        2,
+        1
+      ],
+      "final_mapping": [
+        0,
+        2,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.31,
+            0,
+            0
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nu(pi/2,0,pi) q[0];\ncx q[0],q[1];\nu(0.31,0,0) q[2];\nmeasure q[0] -> c[2];\nmeasure q[2] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 0,
+      "model_prediction": null,
+      "elapsed_s": 0.01853158394806087,
+      "name": "qiskit-1",
+      "status": "ok",
+      "metadata": {
+        "name": "qiskit-1",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 3,
+        "phase_alignment": "none; independent verifier must check phase",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "in-process compiler call including optional dependency imports",
+        "version": "2.6.1",
+        "optimization_level": 1,
+        "elapsed_s": 0.01853158394806087
+      },
+      "global_phase_correction": 0
+    },
+    {
+      "id": "qiskit-2",
+      "config": {
+        "compiler": "qiskit-2"
+      },
+      "metrics": {
+        "two_qubit_gates": 1,
+        "single_qubit_gates": 2,
+        "depth": 2,
+        "duration_ns": 335,
+        "estimated_success": 0.9870122470000001,
+        "objective": 1.1845826505410697,
+        "compile_time_s": 0.06211287504993379
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 1.401642967028923e-16,
+        "global_phase_error": 6.123233995736766e-17,
+        "randomized_max_error": 1.2412670766236366e-16,
+        "trials": 8,
+        "tolerance": 1e-8
+      },
+      "initial_mapping": [
+        0,
+        2,
+        1
+      ],
+      "final_mapping": [
+        0,
+        2,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.31,
+            0,
+            0
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nu(pi/2,0,pi) q[0];\ncx q[0],q[1];\nu(0.31,0,0) q[2];\nmeasure q[0] -> c[2];\nmeasure q[2] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 0,
+      "model_prediction": null,
+      "elapsed_s": 0.06211287504993379,
+      "name": "qiskit-2",
+      "status": "ok",
+      "metadata": {
+        "name": "qiskit-2",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 3,
+        "phase_alignment": "none; independent verifier must check phase",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "in-process compiler call including optional dependency imports",
+        "version": "2.6.1",
+        "optimization_level": 2,
+        "elapsed_s": 0.06211287504993379
+      },
+      "global_phase_correction": 0
+    },
+    {
+      "id": "qiskit-3",
+      "config": {
+        "compiler": "qiskit-3"
+      },
+      "metrics": {
+        "two_qubit_gates": 1,
+        "single_qubit_gates": 2,
+        "depth": 2,
+        "duration_ns": 335,
+        "estimated_success": 0.9870122470000001,
+        "objective": 1.1845826505410697,
+        "compile_time_s": 0.05519283306784928
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 1.401642967028923e-16,
+        "global_phase_error": 6.123233995736766e-17,
+        "randomized_max_error": 1.2412670766236366e-16,
+        "trials": 8,
+        "tolerance": 1e-8
+      },
+      "initial_mapping": [
+        0,
+        2,
+        1
+      ],
+      "final_mapping": [
+        0,
+        2,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.31,
+            0,
+            0
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nu(pi/2,0,pi) q[0];\ncx q[0],q[1];\nu(0.31,0,0) q[2];\nmeasure q[0] -> c[2];\nmeasure q[2] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 0,
+      "model_prediction": null,
+      "elapsed_s": 0.05519283306784928,
+      "name": "qiskit-3",
+      "status": "ok",
+      "metadata": {
+        "name": "qiskit-3",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 3,
+        "phase_alignment": "none; independent verifier must check phase",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "in-process compiler call including optional dependency imports",
+        "version": "2.6.1",
+        "optimization_level": 3,
+        "elapsed_s": 0.05519283306784928
+      },
+      "global_phase_correction": 0
+    },
+    {
+      "id": "qmap",
+      "config": {
+        "compiler": "qmap"
+      },
+      "metrics": {
+        "two_qubit_gates": 1,
+        "single_qubit_gates": 2,
+        "depth": 2,
+        "duration_ns": 335,
+        "estimated_success": 0.9870122470000001,
+        "objective": 1.1845826505410697,
+        "compile_time_s": 0.7791962920455262
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 1.1897886892475e-16,
+        "global_phase_error": 1.232595164407831e-32,
+        "randomized_max_error": 1.1443916996305594e-16,
+        "trials": 8,
+        "tolerance": 1e-8
+      },
+      "initial_mapping": [
+        0,
+        2,
+        1
+      ],
+      "final_mapping": [
+        0,
+        2,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.31,
+            0,
+            0
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nu(pi/2,0,pi) q[0];\ncx q[0],q[1];\nu(0.31,0,0) q[2];\nmeasure q[0] -> c[2];\nmeasure q[2] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 6.123233995736766e-17,
+      "model_prediction": null,
+      "elapsed_s": 0.7791962920455262,
+      "name": "qmap",
+      "status": "ok",
+      "metadata": {
+        "name": "qmap",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 3,
+        "phase_alignment": "none; QMAP conversion may discard global phase; verifier must report it",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "wall time including isolated worker imports/startup and QASM transport",
+        "version": "3.11.0",
+        "method": "heuristic",
+        "seed_supported": false,
+        "qmap": {
+          "circuit": {
+            "cnots": 1,
+            "gates": 3,
+            "name": "circuit-41",
+            "qubits": 3,
+            "single_qubit_gates": 2
+          },
+          "config": {
+            "add_measurements_to_mapped_circuit": false,
+            "debug": false,
+            "layering_strategy": "individual_gates",
+            "method": "heuristic",
+            "post_mapping_optimizations": true,
+            "pre_mapping_optimizations": true,
+            "settings": {
+              "heuristic": "gate_count_max_distance",
+              "heuristic_properties": {
+                "admissible": true,
+                "fidelity_aware": false,
+                "principally_admissible": true,
+                "tight": true
+              },
+              "initial_layout": "dynamic",
+              "lookahead": {
+                "factor": 0.5,
+                "first_factor": 0.75,
+                "heuristic": "gate_count_max_distance",
+                "heuristic_properties": {
+                  "fidelity_aware": false
+                },
+                "lookaheads": 15
+              }
+            },
+            "verbose": false
+          },
+          "mapped_circuit": {
+            "cnots": 1,
+            "gates": 3,
+            "name": "circuit-41_mapped",
+            "qubits": 3,
+            "single_qubit_gates": 2
+          },
+          "statistics": {
+            "additional_gates": 0,
+            "arch": "generic_3",
+            "benchmark": {
+              "average_branching_factor": 0,
+              "effective_branching_factor": 0,
+              "expanded_nodes": 0,
+              "generated_nodes": 0,
+              "seconds_per_node": 0
+            },
+            "layers": 3,
+            "mapping_time": 0.000030833,
+            "swaps": 0,
+            "timeout": false,
+            "total_fidelity": 1,
+            "total_log_fidelity": 0
+          }
+        },
+        "layout_extraction": "initial permutation composed with final layout in physical wire order",
+        "idle_wire_identity_markers": [],
+        "exact_identity_operations_removed": 0,
+        "elapsed_s": 0.7791962920455262,
+        "worker_compile_elapsed_s": 0.04252662498038262,
+        "timeout_s": 45
+      },
+      "global_phase_correction": 6.123233995736766e-17
+    },
+    {
+      "id": "bqskit",
+      "config": {
+        "compiler": "bqskit"
+      },
+      "metrics": {
+        "two_qubit_gates": 1,
+        "single_qubit_gates": 5,
+        "depth": 3,
+        "duration_ns": 370,
+        "estimated_success": 0.985532468765309,
+        "objective": 1.2365856515414437,
+        "compile_time_s": 7.120814290945418
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 2.039761391649297e-16,
+        "global_phase_error": 1.8369701987210302e-16,
+        "randomized_max_error": 1.7772239894833365e-16,
+        "trials": 8,
+        "tolerance": 1e-7
+      },
+      "initial_mapping": [
+        1,
+        0,
+        2
+      ],
+      "final_mapping": [
+        1,
+        0,
+        2
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.31,
+            0,
+            0
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0,
+            -3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[3];\ncreg c[3];\nu(0.31,0,0) q[0];\nu(pi/2,0,-pi) q[1];\nu(0,0,0) q[2];\ncx q[1],q[2];\nu(0,0,0) q[1];\nu(0,0,0) q[2];\nmeasure q[1] -> c[2];\nmeasure q[0] -> c[1];\nmeasure q[2] -> c[0];",
+      "global_phase": 6.283185307179586,
+      "model_prediction": null,
+      "elapsed_s": 7.120814290945418,
+      "name": "bqskit",
+      "status": "ok",
+      "metadata": {
+        "name": "bqskit",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 3,
+        "phase_alignment": "none; numerical synthesis may return a global phase difference",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "wall time including isolated worker imports/startup and QASM transport",
+        "version": "1.2.1",
+        "optimization_level": 1,
+        "max_synthesis_size": 2,
+        "synthesis_epsilon": 1e-10,
+        "num_workers": 1,
+        "elapsed_s": 7.120814290945418,
+        "worker_compile_elapsed_s": 5.943131332984194,
+        "timeout_s": 45
+      },
+      "global_phase_correction": -6.123233995736766e-17
+    }
+  ],
+  "noise": {
+    "method": "Aer exact density matrix; zero logical input; output distribution fidelity",
+    "assumptions": "Synthetic U/CX depolarizing errors + independent symmetric readout. No T1/T2, crosstalk, pulse physics or QPU data. Input comparison is Qiskit level 0 on the SAME device. Distribution similarity is not equivalence proof.",
+    "ideal_probabilities": [
+      0.48808339247142835,
+      0,
+      0.011916607528571646,
+      0,
+      0,
+      0.48808339247142835,
+      0,
+      0.011916607528571646
+    ],
+    "optimized_probabilities": [
+      0.4597769551619758,
+      0.01962067898531006,
+      0.01975915683802437,
+      0.0008432090146899398,
+      0.01962067898531006,
+      0.4597769551619756,
+      0.0008432090146899398,
+      0.019759156838024358
+    ],
+    "input_probabilities": [
+      0.44786902992619626,
+      0.023368992770627272,
+      0.023502545003786502,
+      0.005259432299390273,
+      0.02336899277062727,
+      0.447869029926196,
+      0.005259432299390271,
+      0.02350254500378649
+    ],
+    "optimized_fidelity": 0.9567326988540193,
+    "input_fidelity": 0.9381059813636914
+  },
+  "model": {
+    "name": "QLOOM graph-aware ExtraTrees",
+    "training_rows": 2880,
+    "training_circuits": 120,
+    "features": 28,
+    "sha256": "f2bbaa6aedb2754410a16a2e2a2028b1b5ef867eb027f74816d3b5df4f25d613",
+    "training": {
+      "seed": 20261025,
+      "families": [
+        "random",
+        "mirror",
+        "qaoa"
+      ],
+      "topologies": [
+        "line",
+        "ring",
+        "grid"
+      ],
+      "qubits": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "label": "objective / (input two-qubit gates + 1)",
+      "source_sha256": "3fa9398b8c3df99de300e7344760ac4defce2f24735bbe3d19840b6023a4148b",
+      "raw_labels_sha256": "61b748d83fd1465f22e110ce51b9570d9333f7cd6cb36bf2bb436215b1cd4487",
+      "model_type": "ExtraTreesRegressor",
+      "trees": 48,
+      "max_depth": 10,
+      "min_samples_leaf": 3,
+      "feature_names": [
+        "qubits",
+        "operations",
+        "two_qubit_count",
+        "single_qubit_count",
+        "interaction_density",
+        "interaction_max_degree",
+        "interaction_mean_degree",
+        "interaction_degree_std",
+        "hardware_density",
+        "hardware_diameter",
+        "hardware_mean_distance",
+        "hardware_degree_std",
+        "laplacian_gap",
+        "placement_mean_distance",
+        "placement_max_distance",
+        "early_distance",
+        "late_distance",
+        "commutation_reductions",
+        "single_error",
+        "two_error",
+        "layout_identity",
+        "layout_central",
+        "layout_interaction",
+        "layout_reverse",
+        "route_control",
+        "route_target",
+        "route_lookahead",
+        "rewrite_enabled"
+      ],
+      "versions": {
+        "qiskit": "2.6.1",
+        "numpy": "2.5.4",
+        "scikit-learn": "1.9.1"
+      }
+    }
+  },
+  "search_time_s": 0.008493792032822967,
+  "elapsed_s": 8.30421574995853,
+  "cache_hit": false,
+  "export_note": "QASM2 omits global phase and layout semantics. Export JSON alongside QASM. Initialize inputs using initial_mapping; interpret unitary outputs using final_mapping. Exported measurement statements already map logical results to original classical bit indices. All model noise is simulated; no real QPU execution."
+}

@@ -1,0 +1,6770 @@
+{
+  "schema_version": "1.0",
+  "seed": 7,
+  "strategy": "learned",
+  "budget": 4,
+  "device": {
+    "name": "line-5",
+    "n_qubits": 5,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "single_error": 0.0005,
+    "two_error": 0.012,
+    "readout_error": 0.018,
+    "single_duration_ns": 35,
+    "two_duration_ns": 300,
+    "noise_source": "synthetic depolarizing + symmetric readout; no QPU calibration",
+    "basis_gates": [
+      "u",
+      "cx"
+    ]
+  },
+  "input": {
+    "name": "qaoa-5-13",
+    "n_qubits": 5,
+    "n_clbits": 5,
+    "operations": [
+      {
+        "gate": "h",
+        "qubits": [
+          0
+        ],
+        "params": []
+      },
+      {
+        "gate": "h",
+        "qubits": [
+          1
+        ],
+        "params": []
+      },
+      {
+        "gate": "h",
+        "qubits": [
+          2
+        ],
+        "params": []
+      },
+      {
+        "gate": "h",
+        "qubits": [
+          3
+        ],
+        "params": []
+      },
+      {
+        "gate": "h",
+        "qubits": [
+          4
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          0,
+          2
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          2
+        ],
+        "params": [
+          0.2
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          0,
+          2
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          1,
+          3
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          3
+        ],
+        "params": [
+          0.2
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          1,
+          3
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          2,
+          4
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          4
+        ],
+        "params": [
+          0.2
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          2,
+          4
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          3,
+          0
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          0
+        ],
+        "params": [
+          0.2
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          3,
+          0
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          4,
+          1
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          1
+        ],
+        "params": [
+          0.2
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          4,
+          1
+        ],
+        "params": []
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          0
+        ],
+        "params": [
+          0.4
+        ]
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          1
+        ],
+        "params": [
+          0.4
+        ]
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          2
+        ],
+        "params": [
+          0.4
+        ]
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          3
+        ],
+        "params": [
+          0.4
+        ]
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          4
+        ],
+        "params": [
+          0.4
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          0,
+          2
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          2
+        ],
+        "params": [
+          0.30000000000000004
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          0,
+          2
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          1,
+          3
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          3
+        ],
+        "params": [
+          0.30000000000000004
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          1,
+          3
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          2,
+          4
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          4
+        ],
+        "params": [
+          0.30000000000000004
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          2,
+          4
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          3,
+          0
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          0
+        ],
+        "params": [
+          0.30000000000000004
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          3,
+          0
+        ],
+        "params": []
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          4,
+          1
+        ],
+        "params": []
+      },
+      {
+        "gate": "rz",
+        "qubits": [
+          1
+        ],
+        "params": [
+          0.30000000000000004
+        ]
+      },
+      {
+        "gate": "cx",
+        "qubits": [
+          4,
+          1
+        ],
+        "params": []
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          0
+        ],
+        "params": [
+          0.47000000000000003
+        ]
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          1
+        ],
+        "params": [
+          0.47000000000000003
+        ]
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          2
+        ],
+        "params": [
+          0.47000000000000003
+        ]
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          3
+        ],
+        "params": [
+          0.47000000000000003
+        ]
+      },
+      {
+        "gate": "rx",
+        "qubits": [
+          4
+        ],
+        "params": [
+          0.47000000000000003
+        ]
+      }
+    ],
+    "measurements": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        0
+      ]
+    ],
+    "global_phase": 0.0,
+    "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nh q[0];\nh q[1];\nh q[2];\nh q[3];\nh q[4];\ncx q[0],q[2];\nrz(0.2) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.2) q[3];\ncx q[1],q[3];\ncx q[2],q[4];\nrz(0.2) q[4];\ncx q[2],q[4];\ncx q[3],q[0];\nrz(0.2) q[0];\ncx q[3],q[0];\ncx q[4],q[1];\nrz(0.2) q[1];\ncx q[4],q[1];\nrx(0.4) q[0];\nrx(0.4) q[1];\nrx(0.4) q[2];\nrx(0.4) q[3];\nrx(0.4) q[4];\ncx q[0],q[2];\nrz(0.30000000000000004) q[2];\ncx q[0],q[2];\ncx q[1],q[3];\nrz(0.30000000000000004) q[3];\ncx q[1],q[3];\ncx q[2],q[4];\nrz(0.30000000000000004) q[4];\ncx q[2],q[4];\ncx q[3],q[0];\nrz(0.30000000000000004) q[0];\ncx q[3],q[0];\ncx q[4],q[1];\nrz(0.30000000000000004) q[1];\ncx q[4],q[1];\nrx(0.47000000000000003) q[0];\nrx(0.47000000000000003) q[1];\nrx(0.47000000000000003) q[2];\nrx(0.47000000000000003) q[3];\nrx(0.47000000000000003) q[4];\nmeasure q[0] -> c[4];\nmeasure q[1] -> c[3];\nmeasure q[2] -> c[2];\nmeasure q[3] -> c[1];\nmeasure q[4] -> c[0];"
+  },
+  "candidates": [
+    {
+      "id": "qloom-17",
+      "config": {
+        "layout": "interaction",
+        "routing": "lookahead",
+        "lookahead": 6,
+        "rewrite": true
+      },
+      "metrics": {
+        "two_qubit_gates": 32,
+        "single_qubit_gates": 25,
+        "depth": 25,
+        "duration_ns": 5345.0,
+        "estimated_success": 0.6711076480865988,
+        "objective": 36.19060580430938,
+        "compile_time_s": 0.19732945889700204
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 2.9893669801409083e-16,
+        "global_phase_error": 4.4061976289810925e-16,
+        "randomized_max_error": 2.9893669801409083e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        2,
+        4,
+        1,
+        3,
+        0
+      ],
+      "final_mapping": [
+        4,
+        2,
+        0,
+        3,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [
+        {
+          "step": 0,
+          "kind": "layout",
+          "label": "interaction initial placement",
+          "qubits": [],
+          "mapping": [
+            2,
+            4,
+            1,
+            3,
+            0
+          ]
+        },
+        {
+          "step": 26,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 0\u21941",
+          "qubits": [
+            0,
+            1
+          ],
+          "mapping": [
+            2,
+            4,
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "step": 29,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 3\u21944",
+          "qubits": [
+            3,
+            4
+          ],
+          "mapping": [
+            2,
+            3,
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "step": 32,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 2\u21943",
+          "qubits": [
+            2,
+            3
+          ],
+          "mapping": [
+            3,
+            2,
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "step": 39,
+          "kind": "swap",
+          "label": "Route logical CX 1\u21923: SWAP 3\u21944",
+          "qubits": [
+            3,
+            4
+          ],
+          "mapping": [
+            4,
+            2,
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "step": 57,
+          "kind": "complete",
+          "label": "Native routing complete: 4 swaps",
+          "qubits": [],
+          "mapping": [
+            4,
+            2,
+            0,
+            3,
+            1
+          ]
+        }
+      ],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[2];\nu(pi/2,0,pi) q[4];\nu(pi/2,0,pi) q[1];\ncx q[2],q[1];\nu(0,0,0.2) q[1];\ncx q[2],q[1];\nu(pi/2,0,pi) q[3];\ncx q[4],q[3];\nu(0,0,0.2) q[3];\ncx q[4],q[3];\ncx q[3],q[2];\nu(0,0,0.2) q[2];\ncx q[3],q[2];\nu(0.4,-pi/2,pi/2) q[2];\nu(0.4,-pi/2,pi/2) q[3];\nu(pi/2,0,pi) q[0];\ncx q[1],q[0];\nu(0,0,0.2) q[0];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[1];\ncx q[2],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[2],q[1];\ncx q[0],q[1];\ncx q[1],q[0];\ncx q[0],q[1];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,0.2) q[2];\ncx q[1],q[2];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\ncx q[3],q[4];\nu(0,0,0.30000000000000004) q[4];\ncx q[3],q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nu(0.4,-pi/2,pi/2) q[1];\ncx q[0],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[0],q[1];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\ncx q[1],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[1],q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nmeasure q[4] -> c[4];\nmeasure q[2] -> c[3];\nmeasure q[0] -> c[2];\nmeasure q[3] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": 1.7500012080708496,
+      "elapsed_s": 0.20521195803303272
+    },
+    {
+      "id": "qloom-16",
+      "config": {
+        "layout": "interaction",
+        "routing": "lookahead",
+        "lookahead": 6,
+        "rewrite": false
+      },
+      "metrics": {
+        "two_qubit_gates": 32,
+        "single_qubit_gates": 25,
+        "depth": 25,
+        "duration_ns": 5345.0,
+        "estimated_success": 0.6711076480865988,
+        "objective": 36.19060580430938,
+        "compile_time_s": 0.10750583303160965
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 2.9893669801409083e-16,
+        "global_phase_error": 4.4061976289810925e-16,
+        "randomized_max_error": 2.9893669801409083e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        2,
+        4,
+        1,
+        3,
+        0
+      ],
+      "final_mapping": [
+        4,
+        2,
+        0,
+        3,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [
+        {
+          "step": 0,
+          "kind": "layout",
+          "label": "interaction initial placement",
+          "qubits": [],
+          "mapping": [
+            2,
+            4,
+            1,
+            3,
+            0
+          ]
+        },
+        {
+          "step": 26,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 0\u21941",
+          "qubits": [
+            0,
+            1
+          ],
+          "mapping": [
+            2,
+            4,
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "step": 29,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 3\u21944",
+          "qubits": [
+            3,
+            4
+          ],
+          "mapping": [
+            2,
+            3,
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "step": 32,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 2\u21943",
+          "qubits": [
+            2,
+            3
+          ],
+          "mapping": [
+            3,
+            2,
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "step": 39,
+          "kind": "swap",
+          "label": "Route logical CX 1\u21923: SWAP 3\u21944",
+          "qubits": [
+            3,
+            4
+          ],
+          "mapping": [
+            4,
+            2,
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "step": 57,
+          "kind": "complete",
+          "label": "Native routing complete: 4 swaps",
+          "qubits": [],
+          "mapping": [
+            4,
+            2,
+            0,
+            3,
+            1
+          ]
+        }
+      ],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[2];\nu(pi/2,0,pi) q[4];\nu(pi/2,0,pi) q[1];\ncx q[2],q[1];\nu(0,0,0.2) q[1];\ncx q[2],q[1];\nu(pi/2,0,pi) q[3];\ncx q[4],q[3];\nu(0,0,0.2) q[3];\ncx q[4],q[3];\ncx q[3],q[2];\nu(0,0,0.2) q[2];\ncx q[3],q[2];\nu(0.4,-pi/2,pi/2) q[2];\nu(0.4,-pi/2,pi/2) q[3];\nu(pi/2,0,pi) q[0];\ncx q[1],q[0];\nu(0,0,0.2) q[0];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[1];\ncx q[2],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[2],q[1];\ncx q[0],q[1];\ncx q[1],q[0];\ncx q[0],q[1];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,0.2) q[2];\ncx q[1],q[2];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\ncx q[3],q[4];\nu(0,0,0.30000000000000004) q[4];\ncx q[3],q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nu(0.4,-pi/2,pi/2) q[1];\ncx q[0],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[0],q[1];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\ncx q[1],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[1],q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nmeasure q[4] -> c[4];\nmeasure q[2] -> c[3];\nmeasure q[0] -> c[2];\nmeasure q[3] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": 1.8363717704352707,
+      "elapsed_s": 0.42454070795793086
+    },
+    {
+      "id": "qloom-11",
+      "config": {
+        "layout": "central",
+        "routing": "lookahead",
+        "lookahead": 6,
+        "rewrite": true
+      },
+      "metrics": {
+        "two_qubit_gates": 41,
+        "single_qubit_gates": 25,
+        "depth": 34,
+        "duration_ns": 8045.0,
+        "estimated_success": 0.6020113640770446,
+        "objective": 46.41983165317676,
+        "compile_time_s": 0.05465866590384394
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 2.9893669801409083e-16,
+        "global_phase_error": 4.4061976289810925e-16,
+        "randomized_max_error": 2.9893669801409083e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        2,
+        0,
+        1,
+        3,
+        4
+      ],
+      "final_mapping": [
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [
+        {
+          "step": 0,
+          "kind": "layout",
+          "label": "central initial placement",
+          "qubits": [],
+          "mapping": [
+            2,
+            0,
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "step": 10,
+          "kind": "swap",
+          "label": "Route logical CX 1\u21923: SWAP 2\u21943",
+          "qubits": [
+            2,
+            3
+          ],
+          "mapping": [
+            3,
+            0,
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "step": 13,
+          "kind": "swap",
+          "label": "Route logical CX 1\u21923: SWAP 1\u21942",
+          "qubits": [
+            1,
+            2
+          ],
+          "mapping": [
+            3,
+            0,
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "step": 19,
+          "kind": "swap",
+          "label": "Route logical CX 3\u21920: SWAP 2\u21943",
+          "qubits": [
+            2,
+            3
+          ],
+          "mapping": [
+            2,
+            0,
+            3,
+            1,
+            4
+          ]
+        },
+        {
+          "step": 35,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 3\u21944",
+          "qubits": [
+            3,
+            4
+          ],
+          "mapping": [
+            2,
+            0,
+            4,
+            1,
+            3
+          ]
+        },
+        {
+          "step": 38,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 0\u21941",
+          "qubits": [
+            0,
+            1
+          ],
+          "mapping": [
+            2,
+            1,
+            4,
+            0,
+            3
+          ]
+        },
+        {
+          "step": 41,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 1\u21942",
+          "qubits": [
+            1,
+            2
+          ],
+          "mapping": [
+            1,
+            2,
+            4,
+            0,
+            3
+          ]
+        },
+        {
+          "step": 48,
+          "kind": "swap",
+          "label": "Route logical CX 1\u21923: SWAP 0\u21941",
+          "qubits": [
+            0,
+            1
+          ],
+          "mapping": [
+            0,
+            2,
+            4,
+            1,
+            3
+          ]
+        },
+        {
+          "step": 66,
+          "kind": "complete",
+          "label": "Native routing complete: 7 swaps",
+          "qubits": [],
+          "mapping": [
+            0,
+            2,
+            4,
+            1,
+            3
+          ]
+        }
+      ],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[2];\nu(pi/2,0,pi) q[0];\nu(pi/2,0,pi) q[1];\ncx q[2],q[1];\nu(0,0,0.2) q[1];\ncx q[2],q[1];\nu(pi/2,0,pi) q[3];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[0],q[1];\nu(0,0,0.2) q[1];\ncx q[0],q[1];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,0.2) q[2];\ncx q[1],q[2];\nu(0.4,-pi/2,pi/2) q[2];\nu(0.4,-pi/2,pi/2) q[1];\nu(pi/2,0,pi) q[4];\ncx q[3],q[4];\nu(0,0,0.2) q[4];\ncx q[3],q[4];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[0],q[1];\ncx q[1],q[0];\ncx q[0],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[3],q[2];\nu(0,0,0.2) q[2];\ncx q[3],q[2];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[0],q[1];\ncx q[1],q[0];\ncx q[0],q[1];\ncx q[2],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[2],q[1];\ncx q[1],q[0];\nu(0,0,0.30000000000000004) q[0];\ncx q[1],q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[4],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[4],q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\ncx q[3],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[3],q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nmeasure q[0] -> c[4];\nmeasure q[2] -> c[3];\nmeasure q[4] -> c[2];\nmeasure q[1] -> c[1];\nmeasure q[3] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": 2.2257889650756844,
+      "elapsed_s": 0.5304071659920737
+    },
+    {
+      "id": "qloom-10",
+      "config": {
+        "layout": "central",
+        "routing": "lookahead",
+        "lookahead": 6,
+        "rewrite": false
+      },
+      "metrics": {
+        "two_qubit_gates": 41,
+        "single_qubit_gates": 25,
+        "depth": 34,
+        "duration_ns": 8045.0,
+        "estimated_success": 0.6020113640770446,
+        "objective": 46.41983165317676,
+        "compile_time_s": 0.009477499988861382
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 2.9893669801409083e-16,
+        "global_phase_error": 4.4061976289810925e-16,
+        "randomized_max_error": 2.9893669801409083e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        2,
+        0,
+        1,
+        3,
+        4
+      ],
+      "final_mapping": [
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [
+        {
+          "step": 0,
+          "kind": "layout",
+          "label": "central initial placement",
+          "qubits": [],
+          "mapping": [
+            2,
+            0,
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "step": 10,
+          "kind": "swap",
+          "label": "Route logical CX 1\u21923: SWAP 2\u21943",
+          "qubits": [
+            2,
+            3
+          ],
+          "mapping": [
+            3,
+            0,
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "step": 13,
+          "kind": "swap",
+          "label": "Route logical CX 1\u21923: SWAP 1\u21942",
+          "qubits": [
+            1,
+            2
+          ],
+          "mapping": [
+            3,
+            0,
+            2,
+            1,
+            4
+          ]
+        },
+        {
+          "step": 19,
+          "kind": "swap",
+          "label": "Route logical CX 3\u21920: SWAP 2\u21943",
+          "qubits": [
+            2,
+            3
+          ],
+          "mapping": [
+            2,
+            0,
+            3,
+            1,
+            4
+          ]
+        },
+        {
+          "step": 35,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 3\u21944",
+          "qubits": [
+            3,
+            4
+          ],
+          "mapping": [
+            2,
+            0,
+            4,
+            1,
+            3
+          ]
+        },
+        {
+          "step": 38,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 0\u21941",
+          "qubits": [
+            0,
+            1
+          ],
+          "mapping": [
+            2,
+            1,
+            4,
+            0,
+            3
+          ]
+        },
+        {
+          "step": 41,
+          "kind": "swap",
+          "label": "Route logical CX 4\u21921: SWAP 1\u21942",
+          "qubits": [
+            1,
+            2
+          ],
+          "mapping": [
+            1,
+            2,
+            4,
+            0,
+            3
+          ]
+        },
+        {
+          "step": 48,
+          "kind": "swap",
+          "label": "Route logical CX 1\u21923: SWAP 0\u21941",
+          "qubits": [
+            0,
+            1
+          ],
+          "mapping": [
+            0,
+            2,
+            4,
+            1,
+            3
+          ]
+        },
+        {
+          "step": 66,
+          "kind": "complete",
+          "label": "Native routing complete: 7 swaps",
+          "qubits": [],
+          "mapping": [
+            0,
+            2,
+            4,
+            1,
+            3
+          ]
+        }
+      ],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[2];\nu(pi/2,0,pi) q[0];\nu(pi/2,0,pi) q[1];\ncx q[2],q[1];\nu(0,0,0.2) q[1];\ncx q[2],q[1];\nu(pi/2,0,pi) q[3];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[0],q[1];\nu(0,0,0.2) q[1];\ncx q[0],q[1];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,0.2) q[2];\ncx q[1],q[2];\nu(0.4,-pi/2,pi/2) q[2];\nu(0.4,-pi/2,pi/2) q[1];\nu(pi/2,0,pi) q[4];\ncx q[3],q[4];\nu(0,0,0.2) q[4];\ncx q[3],q[4];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[0],q[1];\ncx q[1],q[0];\ncx q[0],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[3],q[2];\nu(0,0,0.2) q[2];\ncx q[3],q[2];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[0],q[1];\ncx q[1],q[0];\ncx q[0],q[1];\ncx q[2],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[2],q[1];\ncx q[1],q[0];\nu(0,0,0.30000000000000004) q[0];\ncx q[1],q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[4],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[4],q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\ncx q[3],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[3],q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nmeasure q[0] -> c[4];\nmeasure q[2] -> c[3];\nmeasure q[4] -> c[2];\nmeasure q[1] -> c[1];\nmeasure q[3] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": 2.228615364103228,
+      "elapsed_s": 0.6307760409545153
+    }
+  ],
+  "best_id": "qloom-16",
+  "pareto_ids": [
+    "qloom-17",
+    "qloom-16"
+  ],
+  "baselines": [
+    {
+      "id": "qiskit-0",
+      "config": {
+        "compiler": "qiskit-0"
+      },
+      "metrics": {
+        "two_qubit_gates": 44,
+        "single_qubit_gates": 25,
+        "depth": 37,
+        "duration_ns": 8910.0,
+        "estimated_success": 0.5805979836039151,
+        "objective": 49.82957360279922,
+        "compile_time_s": 0.051828833064064384
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 2.7928509224031823e-16,
+        "global_phase_error": 4.4061976289810925e-16,
+        "randomized_max_error": 2.9893669801409083e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "final_mapping": [
+        0,
+        4,
+        2,
+        1,
+        3
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[0];\nu(pi/2,0,pi) q[1];\nu(pi/2,0,pi) q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[0],q[1];\nu(0,0,0.2) q[1];\ncx q[0],q[1];\nu(pi/2,0,pi) q[3];\ncx q[2],q[3];\nu(0,0,0.2) q[3];\ncx q[2],q[3];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[0];\nu(0,0,0.2) q[0];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[0];\nu(0.4,-pi/2,pi/2) q[1];\nu(pi/2,0,pi) q[4];\ncx q[3],q[4];\nu(0,0,0.2) q[4];\ncx q[3],q[4];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[0],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[0],q[1];\ncx q[4],q[3];\nu(0,0,0.2) q[3];\ncx q[4],q[3];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[3],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[3],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[0];\nu(0,0,0.30000000000000004) q[0];\ncx q[1],q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nu(0.4,-pi/2,pi/2) q[4];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[2];\ncx q[3],q[4];\nu(0,0,0.30000000000000004) q[4];\ncx q[3],q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\nmeasure q[0] -> c[4];\nmeasure q[4] -> c[3];\nmeasure q[2] -> c[2];\nmeasure q[1] -> c[1];\nmeasure q[3] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": null,
+      "elapsed_s": 0.051828833064064384,
+      "name": "qiskit-0",
+      "status": "ok",
+      "metadata": {
+        "name": "qiskit-0",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 5,
+        "phase_alignment": "none; independent verifier must check phase",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "in-process compiler call including optional dependency imports",
+        "version": "2.6.1",
+        "optimization_level": 0,
+        "elapsed_s": 0.051828833064064384
+      },
+      "global_phase_correction": 0.0
+    },
+    {
+      "id": "qiskit-1",
+      "config": {
+        "compiler": "qiskit-1"
+      },
+      "metrics": {
+        "two_qubit_gates": 35,
+        "single_qubit_gates": 25,
+        "depth": 29,
+        "duration_ns": 6280.0,
+        "estimated_success": 0.6472365315854388,
+        "objective": 39.640347753931835,
+        "compile_time_s": 0.1306662920396775
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 2.897767167584095e-16,
+        "global_phase_error": 4.388850394221325e-16,
+        "randomized_max_error": 3.043636481661797e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        2,
+        3,
+        1,
+        4,
+        0
+      ],
+      "final_mapping": [
+        4,
+        1,
+        2,
+        3,
+        0
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[0];\nu(pi/2,0,pi) q[1];\nu(pi/2,0,pi) q[2];\ncx q[2],q[1];\nu(0,0,0.2) q[1];\ncx q[2],q[1];\ncx q[1],q[0];\nu(0,0,0.2) q[0];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[1];\nu(pi/2,0,pi) q[3];\nu(pi/2,0,pi) q[4];\ncx q[3],q[4];\nu(0,0,0.2) q[4];\ncx q[3],q[4];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[0],q[1];\nu(0,0,0.2) q[1];\ncx q[0],q[1];\nu(0.4,-pi/2,pi/2) q[0];\nu(0.4,-pi/2,pi/2) q[1];\ncx q[4],q[3];\nu(0,0,0.2) q[3];\ncx q[4],q[3];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[3],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[3],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[0];\nu(0,0,0.30000000000000004) q[0];\ncx q[1],q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nu(0.4,-pi/2,pi/2) q[4];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[0],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[0],q[1];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\ncx q[3],q[4];\nu(0,0,0.30000000000000004) q[4];\ncx q[3],q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\nmeasure q[4] -> c[4];\nmeasure q[1] -> c[3];\nmeasure q[2] -> c[2];\nmeasure q[3] -> c[1];\nmeasure q[0] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": null,
+      "elapsed_s": 0.1306662920396775,
+      "name": "qiskit-1",
+      "status": "ok",
+      "metadata": {
+        "name": "qiskit-1",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 5,
+        "phase_alignment": "none; independent verifier must check phase",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "in-process compiler call including optional dependency imports",
+        "version": "2.6.1",
+        "optimization_level": 1,
+        "elapsed_s": 0.1306662920396775
+      },
+      "global_phase_correction": 0.0
+    },
+    {
+      "id": "qiskit-2",
+      "config": {
+        "compiler": "qiskit-2"
+      },
+      "metrics": {
+        "two_qubit_gates": 32,
+        "single_qubit_gates": 25,
+        "depth": 25,
+        "duration_ns": 5345.0,
+        "estimated_success": 0.6711076480865988,
+        "objective": 36.19060580430938,
+        "compile_time_s": 0.12888133304659277
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 3.002224531865041e-16,
+        "global_phase_error": 4.544975507059237e-16,
+        "randomized_max_error": 2.9893669801409083e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        2,
+        4,
+        1,
+        3,
+        0
+      ],
+      "final_mapping": [
+        4,
+        2,
+        0,
+        3,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[0];\nu(pi/2,0,pi) q[1];\nu(pi/2,0,pi) q[2];\ncx q[2],q[1];\nu(0,0,0.2) q[1];\ncx q[2],q[1];\ncx q[1],q[0];\nu(0,0,0.2) q[0];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[1];\nu(pi/2,0,pi) q[3];\nu(pi/2,0,pi) q[4];\ncx q[4],q[3];\nu(0,0,0.2) q[3];\ncx q[4],q[3];\ncx q[3],q[2];\nu(0,0,0.2) q[2];\ncx q[3],q[2];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[2],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[2],q[1];\ncx q[1],q[0];\ncx q[0],q[1];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,0.2) q[2];\ncx q[1],q[2];\nu(0.4,-pi/2,pi/2) q[1];\ncx q[0],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[0],q[1];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[1],q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nu(0.47000000000000003,-pi/2,pi/2) q[2];\ncx q[3],q[4];\nu(0,0,0.30000000000000004) q[4];\ncx q[3],q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\nmeasure q[4] -> c[4];\nmeasure q[2] -> c[3];\nmeasure q[0] -> c[2];\nmeasure q[3] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": null,
+      "elapsed_s": 0.12888133304659277,
+      "name": "qiskit-2",
+      "status": "ok",
+      "metadata": {
+        "name": "qiskit-2",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 5,
+        "phase_alignment": "none; independent verifier must check phase",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "in-process compiler call including optional dependency imports",
+        "version": "2.6.1",
+        "optimization_level": 2,
+        "elapsed_s": 0.12888133304659277
+      },
+      "global_phase_correction": 0.0
+    },
+    {
+      "id": "qiskit-3",
+      "config": {
+        "compiler": "qiskit-3"
+      },
+      "metrics": {
+        "two_qubit_gates": 32,
+        "single_qubit_gates": 25,
+        "depth": 25,
+        "duration_ns": 5345.0,
+        "estimated_success": 0.6711076480865988,
+        "objective": 36.19060580430938,
+        "compile_time_s": 0.2058262500213459
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 3.002224531865041e-16,
+        "global_phase_error": 4.544975507059237e-16,
+        "randomized_max_error": 2.9893669801409083e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        2,
+        4,
+        1,
+        3,
+        0
+      ],
+      "final_mapping": [
+        4,
+        2,
+        0,
+        3,
+        1
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[0];\nu(pi/2,0,pi) q[1];\nu(pi/2,0,pi) q[2];\ncx q[2],q[1];\nu(0,0,0.2) q[1];\ncx q[2],q[1];\ncx q[1],q[0];\nu(0,0,0.2) q[0];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[1];\nu(pi/2,0,pi) q[3];\nu(pi/2,0,pi) q[4];\ncx q[4],q[3];\nu(0,0,0.2) q[3];\ncx q[4],q[3];\ncx q[3],q[2];\nu(0,0,0.2) q[2];\ncx q[3],q[2];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[2],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[2],q[1];\ncx q[1],q[0];\ncx q[0],q[1];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[3];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,0.2) q[2];\ncx q[1],q[2];\nu(0.4,-pi/2,pi/2) q[1];\ncx q[0],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[0],q[1];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[1],q[2];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nu(0.47000000000000003,-pi/2,pi/2) q[2];\ncx q[3],q[4];\nu(0,0,0.30000000000000004) q[4];\ncx q[3],q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\nmeasure q[4] -> c[4];\nmeasure q[2] -> c[3];\nmeasure q[0] -> c[2];\nmeasure q[3] -> c[1];\nmeasure q[1] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": null,
+      "elapsed_s": 0.2058262500213459,
+      "name": "qiskit-3",
+      "status": "ok",
+      "metadata": {
+        "name": "qiskit-3",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 5,
+        "phase_alignment": "none; independent verifier must check phase",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "in-process compiler call including optional dependency imports",
+        "version": "2.6.1",
+        "optimization_level": 3,
+        "elapsed_s": 0.2058262500213459
+      },
+      "global_phase_correction": 0.0
+    },
+    {
+      "id": "qmap",
+      "config": {
+        "compiler": "qmap"
+      },
+      "metrics": {
+        "two_qubit_gates": 39,
+        "single_qubit_gates": 25,
+        "depth": 31,
+        "duration_ns": 6915.0,
+        "estimated_success": 0.616723930154818,
+        "objective": 44.106670353428456,
+        "compile_time_s": 3.766305291093886
+      },
+      "verification": {
+        "passed": true,
+        "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+        "max_error": 2.8305244335018383e-16,
+        "global_phase_error": 4.492933802779933e-16,
+        "randomized_max_error": 3.510833468576701e-16,
+        "trials": 8,
+        "tolerance": 1e-08
+      },
+      "initial_mapping": [
+        0,
+        2,
+        1,
+        3,
+        4
+      ],
+      "final_mapping": [
+        0,
+        4,
+        2,
+        1,
+        3
+      ],
+      "operations": [
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            1.5707963267948966,
+            0.0,
+            3.141592653589793
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            0,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.2
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            1
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            2
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            1,
+            0
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            0
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            1
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.4,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            4,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            2,
+            3
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            2
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.0,
+            0.0,
+            0.30000000000000004
+          ]
+        },
+        {
+          "gate": "cx",
+          "qubits": [
+            3,
+            4
+          ],
+          "params": []
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            3
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        },
+        {
+          "gate": "u",
+          "qubits": [
+            4
+          ],
+          "params": [
+            0.47000000000000003,
+            -1.5707963267948966,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "history": [],
+      "qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\ncreg c[5];\nu(pi/2,0,pi) q[0];\nu(pi/2,0,pi) q[1];\ncx q[0],q[1];\nu(0,0,0.2) q[1];\ncx q[0],q[1];\nu(pi/2,0,pi) q[2];\nu(pi/2,0,pi) q[3];\ncx q[2],q[3];\nu(0,0,0.2) q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[1],q[0];\nu(0,0,0.2) q[0];\ncx q[1],q[0];\nu(0.4,-pi/2,pi/2) q[0];\nu(0.4,-pi/2,pi/2) q[1];\nu(pi/2,0,pi) q[4];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\nu(0,0,0.2) q[3];\ncx q[2],q[3];\nu(0.4,-pi/2,pi/2) q[2];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[0],q[1];\nu(0,0,0.30000000000000004) q[1];\ncx q[0],q[1];\ncx q[3],q[4];\nu(0,0,0.2) q[4];\ncx q[3],q[4];\nu(0.4,-pi/2,pi/2) q[4];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[3],q[2];\nu(0,0,0.30000000000000004) q[2];\ncx q[3],q[2];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[1],q[0];\nu(0,0,0.30000000000000004) q[0];\ncx q[1],q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[0];\nu(0.47000000000000003,-pi/2,pi/2) q[1];\nu(0.4,-pi/2,pi/2) q[4];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[2],q[3];\nu(0,0,0.30000000000000004) q[3];\ncx q[2],q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[2];\ncx q[3],q[4];\nu(0,0,0.30000000000000004) q[4];\ncx q[3],q[4];\nu(0.47000000000000003,-pi/2,pi/2) q[3];\nu(0.47000000000000003,-pi/2,pi/2) q[4];\nmeasure q[0] -> c[4];\nmeasure q[4] -> c[3];\nmeasure q[2] -> c[2];\nmeasure q[1] -> c[1];\nmeasure q[3] -> c[0];",
+      "global_phase": 5.033185307179586,
+      "model_prediction": null,
+      "elapsed_s": 3.766305291093886,
+      "name": "qmap",
+      "status": "ok",
+      "metadata": {
+        "name": "qmap",
+        "requested_seed": 7,
+        "basis_gates": [
+          "u",
+          "cx"
+        ],
+        "physical_qubits": 5,
+        "phase_alignment": "none; QMAP conversion may discard global phase; verifier must report it",
+        "budget_note": "One external compiler invocation; compare measured wall time separately.",
+        "timing_scope": "wall time including isolated worker imports/startup and QASM transport",
+        "version": "3.11.0",
+        "method": "heuristic",
+        "seed_supported": false,
+        "qmap": {
+          "circuit": {
+            "cnots": 20,
+            "gates": 45,
+            "name": "circuit-41",
+            "qubits": 5,
+            "single_qubit_gates": 25
+          },
+          "config": {
+            "add_measurements_to_mapped_circuit": false,
+            "debug": false,
+            "layering_strategy": "individual_gates",
+            "method": "heuristic",
+            "post_mapping_optimizations": true,
+            "pre_mapping_optimizations": true,
+            "settings": {
+              "heuristic": "gate_count_max_distance",
+              "heuristic_properties": {
+                "admissible": true,
+                "fidelity_aware": false,
+                "principally_admissible": true,
+                "tight": true
+              },
+              "initial_layout": "dynamic",
+              "lookahead": {
+                "factor": 0.5,
+                "first_factor": 0.75,
+                "heuristic": "gate_count_max_distance",
+                "heuristic_properties": {
+                  "fidelity_aware": false
+                },
+                "lookaheads": 15
+              }
+            },
+            "verbose": false
+          },
+          "mapped_circuit": {
+            "cnots": 39,
+            "gates": 64,
+            "name": "circuit-41_mapped",
+            "qubits": 5,
+            "single_qubit_gates": 25
+          },
+          "statistics": {
+            "additional_gates": 19,
+            "arch": "generic_5",
+            "benchmark": {
+              "average_branching_factor": 0.0,
+              "effective_branching_factor": 0.0,
+              "expanded_nodes": 0,
+              "generated_nodes": 0,
+              "seconds_per_node": 0.0
+            },
+            "layers": 45,
+            "mapping_time": 0.000532875,
+            "swaps": 7,
+            "timeout": false,
+            "total_fidelity": 1.0,
+            "total_log_fidelity": 0.0
+          }
+        },
+        "layout_extraction": "initial permutation composed with final layout in physical wire order",
+        "elapsed_s": 3.766305291093886,
+        "worker_compile_elapsed_s": 0.44289924995973706,
+        "timeout_s": 45.0
+      },
+      "global_phase_correction": -1.2499999999999998
+    },
+    {
+      "id": "bqskit",
+      "name": "bqskit",
+      "status": "unavailable-or-failed",
+      "reason": "TimeoutError: bqskit exceeded 45s wall-time limit; worker group terminated after 45.136s (including imports/startup)."
+    }
+  ],
+  "noise": {
+    "method": "Aer exact density matrix; zero logical input; output distribution fidelity",
+    "assumptions": "Synthetic U/CX depolarizing errors + independent symmetric readout. No T1/T2, crosstalk, pulse physics or QPU data. Input comparison is Qiskit level 0 on the SAME device. Distribution similarity is not equivalence proof.",
+    "ideal_probabilities": [
+      0.13392514047119253,
+      0.028074218411185476,
+      0.028074218411185476,
+      0.00323491630313992,
+      0.028074218411185455,
+      0.04190583719143609,
+      0.0032349163031399264,
+      0.003234916303139931,
+      0.028074218411185466,
+      0.04190583719143608,
+      0.04190583719143608,
+      0.04190583719143608,
+      0.0032349163031399272,
+      0.04190583719143609,
+      0.0032349163031399255,
+      0.028074218411185476,
+      0.028074218411185476,
+      0.0032349163031399255,
+      0.04190583719143609,
+      0.0032349163031399272,
+      0.04190583719143608,
+      0.04190583719143608,
+      0.04190583719143608,
+      0.028074218411185466,
+      0.003234916303139931,
+      0.0032349163031399264,
+      0.04190583719143609,
+      0.028074218411185455,
+      0.00323491630313992,
+      0.028074218411185476,
+      0.028074218411185476,
+      0.13392514047119253
+    ],
+    "optimized_probabilities": [
+      0.10390250329533217,
+      0.029895454928849142,
+      0.031986561164918825,
+      0.008136489536144546,
+      0.03164887000721493,
+      0.039336462459735815,
+      0.009200162161294635,
+      0.009365335386039344,
+      0.031225078696360806,
+      0.03896626650154101,
+      0.03846560520676274,
+      0.03817509688671878,
+      0.008540023629637064,
+      0.0404202216739893,
+      0.00848730743424222,
+      0.032248561031220674,
+      0.03224856103122069,
+      0.008487307434242215,
+      0.0404202216739893,
+      0.008540023629637057,
+      0.03817509688671878,
+      0.038465605206762746,
+      0.03896626650154099,
+      0.03122507869636077,
+      0.009365335386039347,
+      0.009200162161294637,
+      0.0393364624597358,
+      0.03164887000721491,
+      0.008136489536144553,
+      0.03198656116491879,
+      0.029895454928849124,
+      0.1039025032953321
+    ],
+    "input_probabilities": [
+      0.0980844479889086,
+      0.030425579474203705,
+      0.032074830964173795,
+      0.009780285271874047,
+      0.03284774827340503,
+      0.03802818519119695,
+      0.010850438937291146,
+      0.009801689900302276,
+      0.03274701937726996,
+      0.04051080804458628,
+      0.036459705944867124,
+      0.037389303492118865,
+      0.010915351145860081,
+      0.040742759055942525,
+      0.008977197715963189,
+      0.030364649222038336,
+      0.030364649222038347,
+      0.008977197715963187,
+      0.04074275905594253,
+      0.010915351145860076,
+      0.03738930349211888,
+      0.036459705944867124,
+      0.04051080804458631,
+      0.03274701937726997,
+      0.009801689900302286,
+      0.010850438937291146,
+      0.038028185191196974,
+      0.03284774827340501,
+      0.009780285271874049,
+      0.03207483096417378,
+      0.030425579474203695,
+      0.09808444798890854
+    ],
+    "optimized_fidelity": 0.981299410832871,
+    "input_fidelity": 0.9736037497016267
+  },
+  "model": {
+    "name": "QLOOM graph-aware ExtraTrees",
+    "training_rows": 2880,
+    "training_circuits": 120,
+    "features": 28,
+    "sha256": "f2bbaa6aedb2754410a16a2e2a2028b1b5ef867eb027f74816d3b5df4f25d613",
+    "training": {
+      "seed": 20261025,
+      "families": [
+        "random",
+        "mirror",
+        "qaoa"
+      ],
+      "topologies": [
+        "line",
+        "ring",
+        "grid"
+      ],
+      "qubits": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "label": "objective / (input two-qubit gates + 1)",
+      "source_sha256": "3fa9398b8c3df99de300e7344760ac4defce2f24735bbe3d19840b6023a4148b",
+      "raw_labels_sha256": "61b748d83fd1465f22e110ce51b9570d9333f7cd6cb36bf2bb436215b1cd4487",
+      "model_type": "ExtraTreesRegressor",
+      "trees": 48,
+      "max_depth": 10,
+      "min_samples_leaf": 3,
+      "feature_names": [
+        "qubits",
+        "operations",
+        "two_qubit_count",
+        "single_qubit_count",
+        "interaction_density",
+        "interaction_max_degree",
+        "interaction_mean_degree",
+        "interaction_degree_std",
+        "hardware_density",
+        "hardware_diameter",
+        "hardware_mean_distance",
+        "hardware_degree_std",
+        "laplacian_gap",
+        "placement_mean_distance",
+        "placement_max_distance",
+        "early_distance",
+        "late_distance",
+        "commutation_reductions",
+        "single_error",
+        "two_error",
+        "layout_identity",
+        "layout_central",
+        "layout_interaction",
+        "layout_reverse",
+        "route_control",
+        "route_target",
+        "route_lookahead",
+        "rewrite_enabled"
+      ],
+      "versions": {
+        "qiskit": "2.6.1",
+        "numpy": "2.5.4",
+        "scikit-learn": "1.9.1"
+      }
+    }
+  },
+  "search_time_s": 0.6307779579656199,
+  "elapsed_s": 52.53490991704166,
+  "cache_hit": false,
+  "export_note": "QASM2 omits global phase and layout semantics. Export JSON alongside QASM. Initialize inputs using initial_mapping; interpret unitary outputs using final_mapping. Exported measurement statements already map logical results to original classical bit indices. All model noise is simulated; no real QPU execution."
+}

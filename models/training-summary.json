@@ -1,0 +1,68 @@
+{
+  "training_rows": 2880,
+  "training_circuits": 120,
+  "training": {
+    "seed": 20261025,
+    "families": [
+      "random",
+      "mirror",
+      "qaoa"
+    ],
+    "topologies": [
+      "line",
+      "ring",
+      "grid"
+    ],
+    "qubits": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "label": "objective / (input two-qubit gates + 1)",
+    "source_sha256": "3fa9398b8c3df99de300e7344760ac4defce2f24735bbe3d19840b6023a4148b",
+    "raw_labels_sha256": "61b748d83fd1465f22e110ce51b9570d9333f7cd6cb36bf2bb436215b1cd4487",
+    "model_type": "ExtraTreesRegressor",
+    "trees": 48,
+    "max_depth": 10,
+    "min_samples_leaf": 3,
+    "feature_names": [
+      "qubits",
+      "operations",
+      "two_qubit_count",
+      "single_qubit_count",
+      "interaction_density",
+      "interaction_max_degree",
+      "interaction_mean_degree",
+      "interaction_degree_std",
+      "hardware_density",
+      "hardware_diameter",
+      "hardware_mean_distance",
+      "hardware_degree_std",
+      "laplacian_gap",
+      "placement_mean_distance",
+      "placement_max_distance",
+      "early_distance",
+      "late_distance",
+      "commutation_reductions",
+      "single_error",
+      "two_error",
+      "layout_identity",
+      "layout_central",
+      "layout_interaction",
+      "layout_reverse",
+      "route_control",
+      "route_target",
+      "route_lookahead",
+      "rewrite_enabled"
+    ],
+    "versions": {
+      "qiskit": "2.6.1",
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1"
+    }
+  },
+  "model_sha256": "f2bbaa6aedb2754410a16a2e2a2028b1b5ef867eb027f74816d3b5df4f25d613",
+  "elapsed_s": 23.150005167000927,
+  "training_r2_in_sample_not_generalization": 0.9760927149464504
+}

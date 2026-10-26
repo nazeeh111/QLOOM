@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qloom-compiler"
+version = "0.1.0"
+description = "Verified quantum compilation with graph-aware, budgeted learned search"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "Apache-2.0"
+authors = [{name = "Nazeeh", email = "nazeeh111@users.noreply.github.com"}]
+keywords = ["quantum", "compiler", "qiskit", "machine-learning"]
+dependencies = ["numpy>=2.0,<3", "qiskit>=2.1,<3", "fastapi>=0.115,<1", "uvicorn>=0.34,<1"]
+
+[project.optional-dependencies]
+research = ["scikit-learn>=1.6,<2", "matplotlib>=3.9,<4", "qiskit-aer>=0.17,<1", "mqt.qmap>=3.11,<4", "bqskit>=1.2,<2"]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.11", "build"]
+
+[project.scripts]
+qloom = "qloom.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+qloom = ["web/*", "web/assets/*", "data/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[project.urls]
+Homepage = "https://github.com/nazeeh111/QLOOM"
+Repository = "https://github.com/nazeeh111/QLOOM"
+
+[tool.ruff.lint]
+select = ["E4", "E9", "F", "I"]

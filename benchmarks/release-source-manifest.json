@@ -1,0 +1,28 @@
+{
+  "purpose": "Current complete relevant Python source and project configuration; historical run fingerprints remain separate.",
+  "files": {
+    "pyproject.toml": "8633672473acc5c13d87b5bb1e9f185309e7d1e1751eced7519e8ac9dbdb641c",
+    "scripts/check_baselines.py": "07a1c4de03c0e66b1d9d376c00db32f18191f32b9df62ae16a84c9bbe2d68dfc",
+    "scripts/plot_results.py": "c469f747dc4babacb1d5ac0f66c60e8c924d49232cad097dad1ee987609b836f",
+    "scripts/reproduce_native.py": "22f7543fe090ff233bb6c9f0440c81d0eaf2cfaa335bd8d199ba76fb22020dc8",
+    "src/qloom/__init__.py": "1d958f8350b735b5505a236d3c84b6b213748c00d9b3b2b5647fecc8b92c77f7",
+    "src/qloom/baseline_worker.py": "8104b84af6a0544b2224e863672ca5ce4f30d6dfe03ea4977c6cbaa288f20a2a",
+    "src/qloom/baselines.py": "37e3b5ec56c1be33b72650e70876a32f14b00b85d72422ea16f02796b76e6964",
+    "src/qloom/circuits.py": "b99569637f330459ca05ab1e72a9d6f108ed41a5d15ec0711237cd2e59cd59f4",
+    "src/qloom/cli.py": "dcb224a7179ce611df0615b2b2120e10e530f60a5fa8bfd0b7ea721c53aa9928",
+    "src/qloom/compiler.py": "be1d55dd410f1af9a6706fc3224e6219f1a57850766a2cb40c4b39773a3bd070",
+    "src/qloom/cost.py": "ae94d7ec6d9e9a81654d584599358496e2d9fb73c5171c84909433992a6c214b",
+    "src/qloom/devices.py": "f165d41a0bc6d05e5366b537ee7ff78ff1e849934a04c62fbc17660afea06401",
+    "src/qloom/examples.py": "24f1985a003df119fc186e6f757717c95fd3796a9fdb501e478632d3632968fb",
+    "src/qloom/experiments.py": "e70ba0310ad352c5de82ef985ddcc62e8406e683255f6a126447d023ee9de227",
+    "src/qloom/features.py": "193319b02d7bb3c0c03133dbe7170a5d21c4c26f71f6c421d88804f7f9b60514",
+    "src/qloom/interfaces.py": "df9b65553abdfe926e2741bb80ed8374b2ba91e02735fd33ca4a27556fc2d69f",
+    "src/qloom/noise.py": "44d630d3b10428ddd71f16a631376e1eb93a5a70bf29663e313e466dde5ca0a5",
+    "src/qloom/routing.py": "0f412892055261c4e93b7222c333a478505e9f013b93e2d9e895c1ef0d8059cd",
+    "src/qloom/server.py": "5ce5f8c1b7882e934d6f1775352044a44e965b6edb1d87d1f870f132e0c731a3",
+    "src/qloom/surrogate.py": "860eb366db51fc1e3ac6f69307dc0acde10f1b0d14f9500ada3e5352ead105b2",
+    "src/qloom/training.py": "fcd300691706d04f454dc6e6f6c89ae9c589f3f631f0f4c113402c05d9b79b14",
+    "src/qloom/verify.py": "da2e934b0a9a8c8085e4b4d6884a7b4c7389548a8a8217d0a4c7c67e8f0d20e8"
+  },
+  "combined_sha256": "dbe77b9abf350dc8443a5ceb5d7148d034736b77368105e8f875aec512bd843e"
+}

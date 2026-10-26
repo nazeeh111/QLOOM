@@ -1,0 +1,13 @@
+QLOOM
+Copyright 2026 Nazeeh (nazeeh111)
+
+QLOOM's layout refinement, commuting rewrite traversal, shortest-path-progress
+lookahead router, graph-feature search integration, independent NumPy interpreter,
+Studio and experiment/report code are provided under Apache License 2.0.
+
+Qiskit supplies circuit data structures, parsing and standard gate translation.
+Qiskit transpilation, MQT QMAP and BQSKit are separate comparison baselines.
+Dependencies retain their own licenses; this project does not relicense them.
+See THIRD_PARTY.md and docs/research-foundations.md for attribution and prior work.
+
+No affiliation with or endorsement by IBM, MQT, Berkeley Lab, or Google is implied.

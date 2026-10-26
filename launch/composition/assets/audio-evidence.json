@@ -1,0 +1,15 @@
+{
+  "original": true,
+  "sample_rate": 22050,
+  "channels": 2,
+  "duration_s": 20,
+  "peak_linear": 0.09131310878423937,
+  "peak_dbfs": -20.789337425437743,
+  "rms_frames": 600,
+  "fps": 30,
+  "authored_cues_s": [
+    4,
+    10,
+    16
+  ]
+}

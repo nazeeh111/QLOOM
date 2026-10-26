@@ -1,0 +1,11 @@
+include LICENSE NOTICE THIRD_PARTY.md CITATION.cff requirements-research-py312.lock
+recursive-include src/qloom/web *
+recursive-include src/qloom/data *.json
+recursive-include docs *.md *.svg *.png *.py
+recursive-include examples *.qasm *.json
+recursive-include scripts *.py
+recursive-include models *.json *.jsonl
+recursive-include benchmarks *.json *.jsonl
+recursive-include tests *.py
+exclude .DS_Store
+prune **/__pycache__

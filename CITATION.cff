@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use QLOOM, cite this software and the relevant compiler foundations in docs/research-foundations.md."
+title: "QLOOM: Verified Quantum Compilation with Budgeted Learned Search"
+type: software
+authors:
+  - family-names: "Abdul-Hadi"
+    given-names: "Nazeeh"
+repository-code: "https://github.com/nazeeh111/QLOOM"
+url: "https://github.com/nazeeh111/QLOOM"
+version: 0.1.0
+date-released: 2026-10-25
+license: Apache-2.0
+keywords:
+  - quantum compilation
+  - machine learning
+  - circuit optimization

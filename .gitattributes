@@ -1,0 +1,5 @@
+docs/figures/*.svg -whitespace linguist-generated=true
+launch/composition/assets/gsap.min.js -whitespace linguist-vendored=true
+models/*.json* linguist-generated=true
+benchmarks/*.json* linguist-generated=true
+src/qloom/data/*.json linguist-generated=true

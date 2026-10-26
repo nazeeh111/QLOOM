@@ -1,0 +1,32 @@
+{
+  "poster_frame_source_time_s": 7,
+  "poster_baked_into_frame_zero": true,
+  "poster_vs_decoded_frame_zero_mean_absolute_rgb_error": 3.494370820473251,
+  "mp4_sha256": "6707240e66b5e4a8965c847c41c6acd3415ac7949a3c031af25d9565eafff965",
+  "composition_sha256": "9d509a75bf2875f14e487f42716ab8bc36139600cc1e3178136665064b920a83",
+  "full_ffmpeg_decode_exit_code": 0,
+  "lint": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "runtime_check": "passed",
+  "layout_check": {
+    "samples": 9,
+    "errors": 0,
+    "warnings": 0
+  },
+  "contrast_check": {
+    "checked": 50,
+    "passed": 50
+  },
+  "motion_module_enabled": false,
+  "direct_rendered_frame_inspection_s": [
+    3,
+    4.2,
+    7,
+    10.2,
+    12.5,
+    16.2,
+    19
+  ]
+}

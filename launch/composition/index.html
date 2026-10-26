@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>QLOOM · The route is the search</title><script src="assets/gsap.min.js"></script><script src="assets/audio-rms.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#f3f2ec;color:#203239;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}#root{width:1920px;height:1080px;position:relative;overflow:hidden}.scene{position:absolute;inset:0;width:1920px;height:1080px;background:#f3f2ec;overflow:hidden}#scene2,#scene3,#scene4{opacity:0}.scene-content{width:100%;height:100%;padding:76px 96px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;align-items:center;gap:20px;font-size:54px;letter-spacing:-2.8px;font-weight:750}.brand .weave-mark{width:67px;height:67px;display:block}.brand .dot{color:#bc7e35}.eyebrow{font:18px/1.4 "SFMono-Regular",Consolas,monospace;letter-spacing:2px;color:#5b6b70}.hero-title{font-size:102px;line-height:1.04;letter-spacing:-4.5px;font-weight:450;max-width:1420px;margin:0}.subline{font-size:27px;line-height:1.6;color:#5b6b70;max-width:1150px;margin:0}.scene-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:30px;font:18px "SFMono-Regular",Consolas,monospace;color:#5b6b70;letter-spacing:.4px}.hook-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.circuit-feature{width:1280px;display:flex;flex-direction:column;align-self:flex-end;gap:0;margin-top:3px;padding:20px 22px 4px;border-top:1px solid #d6dcd5;border-bottom:1px solid #d6dcd5}.circuit-feature img{width:100%;height:310px;display:block}.circuit-caption{font:16px "SFMono-Regular",Consolas,monospace;color:#5b6b70;text-align:right}.product-layout{width:100%;height:100%;display:grid;grid-template-columns:365px minmax(0,1fr);gap:46px;align-items:center}.product-copy{display:flex;flex-direction:column;gap:28px}.product-title{font-size:75px;line-height:1.06;font-weight:450;letter-spacing:-3px;margin:0}.product-body{font-size:26px;line-height:1.55;color:#5b6b70;margin:0}.device-note{font:18px/1.7 "SFMono-Regular",Consolas,monospace;color:#315d7a;padding-top:18px;border-top:1px solid #cfd6cf}.studio-frame{width:100%;height:860px;overflow:hidden;border:1px solid #d1d7d0;border-radius:12px;background:#fffefa;box-shadow:0 20px 70px #20323912}.studio-frame img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}.product-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:0}.scene2-content{gap:20px;padding-top:46px;padding-bottom:46px}.evidence-heading{font-size:76px;line-height:1.08;letter-spacing:-3.3px;font-weight:450;max-width:1500px;margin:22px 0 20px}.evidence-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:55px;min-height:480px;align-items:stretch}.route-card,.proof-card{border:1px solid #d2d9d1;background:#fffefa;border-radius:12px;padding:34px;display:flex;flex-direction:column;gap:24px}.card-title{font:18px "SFMono-Regular",Consolas,monospace;color:#5b6b70;letter-spacing:1.2px}.route-card svg{width:100%;height:290px;display:block}.route-caption{font:20px "SFMono-Regular",Consolas,monospace;color:#315d7a;margin-top:auto;line-height:1.7}.proof-head{display:flex;justify-content:space-between;align-items:center;gap:20px}.verified{display:flex;align-items:center;gap:12px;font-size:31px;font-weight:500}.check{background:#e4efe3;color:#387455;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;font-size:26px}.proof-residual{font-size:50px;letter-spacing:-2px;font-variant-numeric:tabular-nums;line-height:1.1;font-weight:450}.proof-label{font-size:22px;color:#5b6b70;margin-top:-10px}.proof-lines{border-top:1px solid #dfe1da;padding-top:20px;display:flex;flex-direction:column;gap:15px;font-size:23px}.proof-lines span{color:#387455;margin-right:10px}.budget-note{margin-top:auto;font:20px "SFMono-Regular",Consolas,monospace;color:#315d7a;line-height:1.6}.scene4{background:#203239;color:#f3f2ec}.scene4 .scene-content{justify-content:center;align-items:center;text-align:center;padding:105px}.scene4 .brand{font-size:100px;gap:27px;letter-spacing:-5px}.scene4 .brand .weave-mark{width:110px;height:110px;background:#f3f2ec;border-radius:10px;padding:6px}.outro-title{font-size:67px;font-weight:400;letter-spacing:-2.6px;line-height:1.17;margin:31px 0 0;max-width:1300px}.repository{font:27px/1.5 "SFMono-Regular",Consolas,monospace;color:#d7b07c;margin-top:30px}.outro-note{font:18px/1.5 "SFMono-Regular",Consolas,monospace;color:#bbc9c8;margin-top:35px}.weave-light{position:absolute;inset:auto 70px 60px auto;width:170px;height:170px;border:1px solid #315d7a33;border-radius:50%;pointer-events:none}.no-claim{font-size:17px;color:#5b6b70;max-width:1400px;line-height:1.5;margin:0}
+</style></head><body>
+<div id="root" data-composition-id="qloom-launch" data-width="1920" data-height="1080" data-start="0" data-duration="20">
+<div id="scene1" class="scene"><div class="scene-content">
+  <div class="hook-top"><div id="brand1" class="brand"><svg class="weave-mark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#f3f2ec"/><g fill="none" stroke="#254c68" stroke-width="3"><path d="M5 10h18c7 0 7 20 14 20M5 20h30M5 30h18c7 0 7-20 14-20"/><path d="M12 4v32M22 4v32" stroke="#bc7e35"/></g></svg>
+<span>QLOOM<span class="dot">.</span></span></div><span id="category1" class="eyebrow">QUANTUM COMPILER STUDIO</span></div>
+  <h1 id="hook-title" class="hero-title">Same computation.<br>A different route.</h1>
+  <div id="hook-circuit" class="circuit-feature"><img src="assets/actual-circuit.svg" alt="A labeled excerpt of the actual qaoa-5-13 input circuit"><span class="circuit-caption">qaoa-5-13 · actual input excerpt · first 24 operations</span></div>
+  <div id="foot1" class="scene-foot"><span>THE COMPUTATION IS THE FIXED THREAD.</span><span>THE PHYSICAL ROUTE IS THE SEARCH.</span></div>
+</div></div>
+<div id="scene2" class="scene"><div class="scene-content scene2-content">
+  <div id="product-top" class="product-top"><span class="eyebrow">QLOOM / REAL COMPILATION, INSPECTABLE</span><span class="eyebrow">RECORDED DEMONSTRATION</span></div>
+  <div class="product-layout"><div class="product-copy"><h2 id="product-title" class="product-title">Compile.<br>Verify.<br>Inspect.</h2><p id="product-body" class="product-body">Learned, budgeted search.<br>Every result checked.</p><p id="product-device" class="device-note">LOCAL CPU<br>SIMULATED HARDWARE</p></div><div id="studio-frame" class="studio-frame"><img src="assets/studio.png" alt="Actual QLOOM Studio displaying the qaoa-5-13 line-5 recorded experiment"></div></div>
+</div></div>
+<div id="scene3" class="scene"><div class="scene-content">
+  <span id="proof-eyebrow" class="eyebrow">RECORDED DEMO / INDEPENDENT SEMANTICS EVIDENCE</span>
+  <h2 id="evidence-title" class="evidence-heading">Every candidate<br>independently verified.</h2>
+  <div class="evidence-grid"><div id="route-card" class="route-card"><span class="card-title">PHYSICAL ROUTING / LINE-5</span><div id="route-graphic"></div><div id="route-caption" class="route-caption">Logical qubits follow the recorded mapping.</div></div><div id="proof-card" class="proof-card"><div class="proof-head"><span class="card-title">SELECTED IMPLEMENTATION</span><div class="verified"><span class="check">✓</span>Equivalent</div></div><div id="proof-residual" class="proof-residual"></div><div class="proof-label">maximum complex-amplitude residual</div><div class="proof-lines"><div><span>✓</span>Logical input / output mappings</div><div><span>✓</span>Global phase included</div><div><span>✓</span>Full unitary + random inputs</div></div><div id="budget-note" class="budget-note"></div></div></div>
+  <p id="proof-note" class="no-claim">One recorded circuit · NumPy verification, tolerance 1×10⁻⁸ · simulated processor · no broad superiority claim.</p>
+</div></div>
+<div id="scene4" class="scene scene4"><div class="scene-content"><div id="brand4" class="brand"><svg class="weave-mark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#f3f2ec"/><g fill="none" stroke="#254c68" stroke-width="3"><path d="M5 10h18c7 0 7 20 14 20M5 20h30M5 30h18c7 0 7-20 14-20"/><path d="M12 4v32M22 4v32" stroke="#bc7e35"/></g></svg>
+<span>QLOOM<span class="dot">.</span></span></div><h2 id="outro-title" class="outro-title">Your circuit.<br>Every decision inspectable.</h2><div id="repository" class="repository">github.com/nazeeh111/QLOOM</div><div id="outro-note" class="outro-note">LEARNED SEARCH · VERIFIED SEMANTICS · LOCAL CPU STUDIO</div></div></div>
+<audio id="score" src="assets/original-score.wav" data-start="0" data-duration="20" data-track-index="1" data-volume="0.8"></audio>
+</div>
+<script src="evidence.js"></script>
+<script>
+window.__timelines=window.__timelines||{};
+const tl=gsap.timeline({paused:true});
+const E=window.QLOOM_EVIDENCE;
+document.getElementById('proof-residual').textContent=E.max_error.toExponential(2);
+document.getElementById('budget-note').textContent=`${E.budget} real evaluations / ${E.configurations} configurations`;
+const hist=E.history.filter(h=>Array.isArray(h.mapping));
+const final=hist[hist.length-1];
+let graph='';
+hist.forEach((entry,i)=>{
+  let s='';const active=entry.qubits||[];
+  E.edges.forEach(([a,b])=>{const on=active.includes(a)&&active.includes(b);s+=`<line x1="${70+a*130}" y1="105" x2="${70+b*130}" y2="105" stroke="${on?'#bc7e35':'#bdcdd0'}" stroke-width="${on?5:3}"/>`;});
+  for(let p=0;p<E.n_qubits;p++){const logical=entry.mapping.indexOf(p),x=70+p*130,on=active.includes(p);s+=`<circle cx="${x}" cy="105" r="35" fill="${on?'#f6eddc':'#fffefa'}" stroke="${on?'#bc7e35':'#547b8e'}" stroke-width="2"/><text x="${x}" y="102" font-family="monospace" font-size="20" text-anchor="middle" fill="#203239">p${p}</text><text x="${x}" y="122" font-family="monospace" font-size="15" text-anchor="middle" fill="#5b6b70">q${logical}</text>`;}
+  s+=`<text x="330" y="195" font-family="monospace" font-size="18" fill="#5b6b70" text-anchor="middle">Recorded step ${i} / ${hist.length-1}</text>`;
+  graph+=`<g id="mapping-${i}" style="opacity:${i===0?1:0}">${s}</g>`;
+});
+document.getElementById('route-graphic').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 240" aria-label="Recorded physical mappings from the actual compiled candidate">${graph}</svg>`;
+// All timeline construction is synchronous. Crossfades are the scene handoffs.
+tl.from('#brand1',{x:-18,opacity:0,duration:.6,ease:'power3.out'},.12)
+  .from('#category1',{y:10,opacity:0,duration:.6,ease:'sine.out'},.2)
+  .from('#hook-title',{y:22,opacity:0,duration:.75,ease:'power2.out'},.28)
+  .from('#hook-circuit',{x:30,opacity:0,duration:.9,ease:'expo.out'},.55)
+  .from('#foot1',{y:8,opacity:0,duration:.6,ease:'sine.out'},.85);
+function crossfade(oldScene,newScene,at){tl.to(oldScene,{opacity:0,duration:.55,ease:'power2.inOut'},at);tl.fromTo(newScene,{opacity:0},{opacity:1,duration:.55,ease:'power2.inOut'},at);}
+crossfade('#scene1','#scene2',4);
+tl.from('#product-top',{y:9,opacity:0,duration:.6,ease:'sine.out'},4.15)
+  .from('#product-title',{x:-20,opacity:0,duration:.65,ease:'power3.out'},4.25)
+  .from('#studio-frame',{y:28,scale:.98,opacity:0,duration:.9,ease:'expo.out'},4.28)
+  .from('#product-body',{y:12,opacity:0,duration:.65,ease:'power2.out'},4.6)
+  .from('#product-device',{y:9,opacity:0,duration:.6,ease:'sine.out'},4.8)
+  .to('#studio-frame',{scale:1.012,duration:4.5,ease:'sine.inOut'},5.25);
+crossfade('#scene2','#scene3',10);
+tl.from('#proof-eyebrow',{y:9,opacity:0,duration:.55,ease:'sine.out'},10.15)
+  .from('#evidence-title',{x:-18,opacity:0,duration:.65,ease:'power3.out'},10.22)
+  .from('#route-card',{y:22,opacity:0,duration:.7,ease:'expo.out'},10.4)
+  .from('#proof-card',{y:26,opacity:0,duration:.7,ease:'power2.out'},10.65)
+  .from('#proof-note',{y:9,opacity:0,duration:.55,ease:'sine.out'},10.9);
+hist.slice(1).forEach((_,i)=>{const at=11.35+i*.72;tl.to(`#mapping-${i}`,{opacity:0,duration:.18,ease:'sine.inOut'},at);tl.to(`#mapping-${i+1}`,{opacity:1,duration:.18,ease:'sine.inOut'},at);});
+crossfade('#scene3','#scene4',16);
+tl.from('#brand4',{scale:.95,opacity:0,duration:.75,ease:'expo.out'},16.2)
+  .from('#outro-title',{y:18,opacity:0,duration:.7,ease:'power3.out'},16.45)
+  .from('#repository',{y:12,opacity:0,duration:.65,ease:'power2.out'},16.7)
+  .from('#outro-note',{y:8,opacity:0,duration:.6,ease:'sine.out'},16.95);
+const audioPulse={t:0};
+tl.to(audioPulse,{t:20,duration:20,ease:'none',onUpdate:()=>{const frame=Math.min(599,Math.max(0,Math.floor(audioPulse.t*30)));const energy=window.QLOOM_AUDIO_RMS[frame]||0;document.querySelectorAll('.weave-mark').forEach(el=>{el.style.opacity=String(.92+.08*energy);});}},0);
+window.__timelines['qloom-launch']=tl;
+</script></body></html>

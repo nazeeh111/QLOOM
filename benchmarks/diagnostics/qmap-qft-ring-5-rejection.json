@@ -1,0 +1,112 @@
+{
+  "input_qasm": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nh q[0];\np(pi/4) q[0];\ncx q[0],q[1];\np(-pi/4) q[1];\ncx q[0],q[1];\np(pi/4) q[1];\np(pi/8) q[0];\ncx q[0],q[2];\np(-pi/8) q[2];\ncx q[0],q[2];\np(pi/8) q[2];\np(pi/16) q[0];\ncx q[0],q[3];\np(-pi/16) q[3];\ncx q[0],q[3];\np(pi/16) q[3];\np(pi/32) q[0];\ncx q[0],q[4];\np(-pi/32) q[4];\ncx q[0],q[4];\np(pi/32) q[4];\nh q[1];\np(pi/4) q[1];\ncx q[1],q[2];\np(-pi/4) q[2];\ncx q[1],q[2];\np(pi/4) q[2];\np(pi/8) q[1];\ncx q[1],q[3];\np(-pi/8) q[3];\ncx q[1],q[3];\np(pi/8) q[3];\np(pi/16) q[1];\ncx q[1],q[4];\np(-pi/16) q[4];\ncx q[1],q[4];\np(pi/16) q[4];\nh q[2];\np(pi/4) q[2];\ncx q[2],q[3];\np(-pi/4) q[3];\ncx q[2],q[3];\np(pi/4) q[3];\np(pi/8) q[2];\ncx q[2],q[4];\np(-pi/8) q[4];\ncx q[2],q[4];\np(pi/8) q[4];\nh q[3];\np(pi/4) q[3];\ncx q[3],q[4];\np(-pi/4) q[4];\ncx q[3],q[4];\np(pi/4) q[4];\nh q[4];",
+  "input_global_phase": 0.865,
+  "output_qasm_after_declared_phase_restoration": "OPENQASM 2.0;\ninclude \"qelib1.inc\";\nqreg q[5];\nu(pi/2,0,pi) q[0];\nu(0,0,pi/4) q[0];\ncx q[0],q[1];\nu(0,0,-pi/4) q[1];\ncx q[0],q[1];\nu(0,0,pi/8) q[0];\nu(0,0,pi/4) q[1];\nu(pi/2,0,pi) q[1];\nu(0,0,pi/4) q[1];\ncx q[0],q[4];\nu(0,0,-pi/8) q[4];\ncx q[0],q[4];\nu(0,0,pi/16) q[0];\nu(0,0,pi/8) q[4];\ncx q[0],q[4];\ncx q[4],q[0];\ncx q[0],q[4];\ncx q[1],q[0];\nu(0,0,-pi/4) q[0];\ncx q[1],q[0];\nu(0,0,pi/4) q[0];\nu(pi/2,0,pi) q[0];\nu(0,0,pi/4) q[0];\nu(0,0,pi/8) q[1];\ncx q[4],q[3];\nu(0,0,-pi/16) q[3];\ncx q[4],q[3];\nu(0,0,pi/16) q[3];\ncx q[2],q[3];\ncx q[3],q[2];\ncx q[2],q[3];\ncx q[1],q[2];\nu(0,0,-pi/8) q[2];\ncx q[1],q[2];\nu(0,0,pi/16) q[1];\nu(0,0,pi/8) q[2];\ncx q[1],q[2];\ncx q[2],q[1];\ncx q[1],q[2];\ncx q[0],q[1];\nu(0,0,-pi/4) q[1];\ncx q[0],q[1];\nu(0,0,pi/8) q[0];\nu(0,0,pi/4) q[1];\nu(pi/2,0,pi) q[1];\nu(0,0,pi/4) q[1];\nu(0,0,pi/32) q[4];\ncx q[4],q[3];\nu(0,0,-pi/32) q[3];\ncx q[4],q[3];\nu(0,0,pi/32) q[3];\ncx q[2],q[3];\nu(0,0,-pi/16) q[3];\ncx q[2],q[3];\nu(0,0,pi/16) q[3];\ncx q[3],q[4];\ncx q[4],q[3];\ncx q[3],q[4];\ncx q[0],q[4];\nu(0,0,-pi/8) q[4];\ncx q[0],q[4];\nu(0,0,pi/8) q[4];\ncx q[0],q[4];\ncx q[4],q[0];\ncx q[0],q[4];\ncx q[1],q[0];\nu(0,0,-pi/4) q[0];\ncx q[1],q[0];\nu(0,0,pi/4) q[0];\nu(pi/2,0,pi) q[0];",
+  "output_global_phase_after_restoration": 0.8650000000000007,
+  "phase_restoration": 0.8650000000000007,
+  "initial_mapping": [
+    0,
+    1,
+    4,
+    2,
+    3
+  ],
+  "final_mapping": [
+    3,
+    2,
+    4,
+    1,
+    0
+  ],
+  "verification": {
+    "passed": false,
+    "method": "independent-numpy-full-unitary-including-global-phase+random-inputs",
+    "max_error": 0.35355339059327373,
+    "global_phase_error": 3.053113317719181e-16,
+    "randomized_max_error": 0.47428288179269046,
+    "trials": 8,
+    "tolerance": 1e-08
+  },
+  "metadata": {
+    "name": "qmap",
+    "requested_seed": 0,
+    "basis_gates": [
+      "u",
+      "cx"
+    ],
+    "physical_qubits": 5,
+    "phase_alignment": "none; QMAP conversion may discard global phase; verifier must report it",
+    "budget_note": "One external compiler invocation; compare measured wall time separately.",
+    "timing_scope": "wall time including isolated worker imports/startup and QASM transport",
+    "version": "3.11.0",
+    "method": "heuristic",
+    "seed_supported": false,
+    "qmap": {
+      "circuit": {
+        "cnots": 20,
+        "gates": 55,
+        "name": "circuit-41",
+        "qubits": 5,
+        "single_qubit_gates": 35
+      },
+      "config": {
+        "add_measurements_to_mapped_circuit": false,
+        "debug": false,
+        "layering_strategy": "individual_gates",
+        "method": "heuristic",
+        "post_mapping_optimizations": true,
+        "pre_mapping_optimizations": true,
+        "settings": {
+          "heuristic": "gate_count_max_distance",
+          "heuristic_properties": {
+            "admissible": true,
+            "fidelity_aware": false,
+            "principally_admissible": true,
+            "tight": true
+          },
+          "initial_layout": "dynamic",
+          "lookahead": {
+            "factor": 0.5,
+            "first_factor": 0.75,
+            "heuristic": "gate_count_max_distance",
+            "heuristic_properties": {
+              "fidelity_aware": false
+            },
+            "lookaheads": 15
+          }
+        },
+        "verbose": false
+      },
+      "mapped_circuit": {
+        "cnots": 35,
+        "gates": 70,
+        "name": "circuit-41_mapped",
+        "qubits": 5,
+        "single_qubit_gates": 35
+      },
+      "statistics": {
+        "additional_gates": 15,
+        "arch": "generic_5",
+        "benchmark": {
+          "average_branching_factor": 0.0,
+          "effective_branching_factor": 0.0,
+          "expanded_nodes": 0,
+          "generated_nodes": 0,
+          "seconds_per_node": 0.0
+        },
+        "layers": 55,
+        "mapping_time": 0.000246833,
+        "swaps": 5,
+        "timeout": false,
+        "total_fidelity": 1.0,
+        "total_log_fidelity": 0.0
+      }
+    },
+    "layout_extraction": "initial permutation composed with final layout in physical wire order",
+    "idle_wire_identity_markers": [],
+    "exact_identity_operations_removed": 0,
+    "elapsed_s": 2.392117750016041,
+    "worker_compile_elapsed_s": 0.046625333023257554,
+    "timeout_s": 45.0
+  }
+}
