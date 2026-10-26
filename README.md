@@ -117,8 +117,6 @@ Training and benchmarks use fixed seeds and recorded configurations. [The protoc
 | `models/`, `benchmarks/` | Real training/evaluation evidence and reproduction checks |
 | `docs/`, `launch/` | Method, attribution, editable diagrams, plots, screenshots and film sources |
 
-## Research, licensing and citation
+## License
 
-This is an original compiler implementation and bounded learned-search experiment over established techniques. It does not claim that quantum compiler learning, graph representations, commutation rules or ensemble regression are novel. [The foundation review](docs/research-foundations.md) covers BQSKit, QMAP, Qiskit/Aer, the two requested RL studies and newer work. PaperVizAgent was investigated; diagrams use a free editable local route.
-
-QLOOM code is **Apache-2.0**. Dependencies and rendering assets retain their own licenses, including BQSKit's full Berkeley Lab terms. See [THIRD_PARTY.md](THIRD_PARTY.md), [NOTICE](NOTICE) and the launch provenance. Cite this release using [CITATION.cff](CITATION.cff) and cite the relevant upstream compiler research. No upstream endorsement is implied.
+QLOOM code uses **Apache-2.0**. Dependencies and rendering assets retain their own licenses, including BQSKit's full Berkeley Lab terms. See [THIRD_PARTY.md](THIRD_PARTY.md), [NOTICE](NOTICE) and the launch provenance.
