@@ -1,4 +1,4 @@
-include LICENSE NOTICE THIRD_PARTY.md CITATION.cff requirements-research-py312.lock
+include LICENSE THIRD_PARTY.md CITATION.cff requirements-research-py312.lock
 recursive-include src/qloom/web *
 recursive-include src/qloom/data *.json
 recursive-include docs *.md *.svg *.png *.py

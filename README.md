@@ -119,4 +119,4 @@ Training and benchmarks use fixed seeds and recorded configurations. [The protoc
 
 ## License
 
-QLOOM code uses **Apache-2.0**. Dependencies and rendering assets retain their own licenses, including BQSKit's full Berkeley Lab terms. See [THIRD_PARTY.md](THIRD_PARTY.md), [NOTICE](NOTICE) and the launch provenance.
+QLOOM code uses **Apache-2.0**. Dependencies and rendering assets retain their own licenses, including BQSKit's full Berkeley Lab terms. See [THIRD_PARTY.md](THIRD_PARTY.md) and the launch provenance.
