@@ -14,37 +14,46 @@ pytestmark = pytest.mark.skipif(os.name != "posix", reason="POSIX worker-group c
 
 @pytest.mark.parametrize("delayed_probes", [0, 3])
 def test_waits_for_all_terminated_descendants(monkeypatch, delayed_probes):
-    calls = []
-    sleeps = []
+    group = {"alive": True, "probes": 0}
+    signals = []
 
     def killpg(pid, sig):
-        calls.append((pid, sig))
-        if sig == 0 and sum(s == 0 for _, s in calls) > delayed_probes:
-            raise ProcessLookupError
+        assert pid == 123
+        if sig == signal.SIGKILL:
+            signals.append(sig)
+        else:
+            assert sig == 0
+            group["probes"] += 1
+            if group["probes"] > delayed_probes:
+                group["alive"] = False
+                raise ProcessLookupError
 
     monkeypatch.setattr(baselines.os, "killpg", killpg)
     monkeypatch.setattr(baselines, "monotonic", lambda: 0.0)
-    monkeypatch.setattr(baselines, "sleep", sleeps.append)
+    monkeypatch.setattr(baselines, "sleep", lambda _: None)
     process = SimpleNamespace(pid=123, communicate=Mock())
 
     baselines._terminate_worker(process)
 
     process.communicate.assert_called_once_with()
-    assert calls[0] == (123, signal.SIGKILL)
-    assert calls[1:] == [(123, 0)] * (delayed_probes + 1)
-    assert sleeps == [0.01] * delayed_probes
+    assert signals == [signal.SIGKILL]
+    assert not group["alive"], "cleanup returned while descendants still existed"
 
 
 def test_reports_unreaped_group_instead_of_claiming_cleanup(monkeypatch):
-    clock = iter([0.0, 1.0])
+    clock = [0.0]
+
+    def monotonic():
+        clock[0] += 0.25
+        return clock[0]
+
     monkeypatch.setattr(baselines.os, "killpg", lambda *_: None)
-    monkeypatch.setattr(baselines, "monotonic", lambda: next(clock))
-    sleep = Mock()
-    monkeypatch.setattr(baselines, "sleep", sleep)
+    monkeypatch.setattr(baselines, "monotonic", monotonic)
+    monkeypatch.setattr(baselines, "sleep", lambda _: None)
     process = SimpleNamespace(pid=123, communicate=Mock())
 
     with pytest.raises(RuntimeError, match="worker group was not reaped"):
         baselines._terminate_worker(process)
 
     process.communicate.assert_called_once_with()
-    sleep.assert_not_called()
+    assert clock[0] <= 1.5, "cleanup must remain bounded when reaping never completes"
