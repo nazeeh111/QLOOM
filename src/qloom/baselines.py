@@ -15,7 +15,7 @@ import subprocess
 import sys
 from importlib.metadata import version
 from pathlib import Path
-from time import perf_counter
+from time import monotonic, perf_counter, sleep
 from typing import Any, Protocol
 
 from qiskit import QuantumCircuit, qasm2, transpile
@@ -31,7 +31,7 @@ BASELINE_NAMES = ("qiskit-0", "qiskit-1", "qiskit-2", "qiskit-3", "qmap", "bqski
 
 
 def _terminate_worker(process: subprocess.Popen[str]) -> None:
-    """Terminate the isolated worker and its POSIX descendants, then reap it."""
+    """Kill the isolated worker tree and wait for its POSIX group to be reaped."""
     if os.name == "posix":
         try:
             os.killpg(process.pid, signal.SIGKILL)
@@ -40,6 +40,18 @@ def _terminate_worker(process: subprocess.Popen[str]) -> None:
     else:
         process.kill()
     process.communicate()
+    if os.name == "posix":
+        # Reaping the leader does not synchronously reap its orphaned children.
+        # Wait for the kernel's child reaper before reporting complete cleanup.
+        deadline = monotonic() + 1.0
+        while True:
+            try:
+                os.killpg(process.pid, 0)
+            except ProcessLookupError:
+                return
+            if monotonic() >= deadline:
+                raise RuntimeError("Terminated worker group was not reaped within 1s.")
+            sleep(0.01)
 
 
 def _layout(circuit: QuantumCircuit, n: int) -> tuple[list[int], list[int]]:
