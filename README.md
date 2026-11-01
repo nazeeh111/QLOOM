@@ -1,12 +1,29 @@
 <p align="left"><img src="docs/assets/logo.svg" alt="QLOOM" width="260"></p>
 
-# Weave better quantum circuits. Check every result.
+# QLOOM
 
-**QLOOM is a CPU quantum compiler and interactive research Studio with a trained, graph-aware search policy.** It imports a circuit, ranks native compilation strategies, evaluates a strict candidate budget, independently checks logical meaning, and exports the physical circuit with its mappings, phase and experiment report.
+Compile quantum circuits on a CPU, inspect routing, and verify their logical meaning. QLOOM ranks native strategies with a trained, graph-aware policy, evaluates a strict candidate budget, and exports the physical circuit with mappings, phase and an experiment report.
 
 [Quickstart](#run-the-studio) · [How it works](docs/method.md) · [Measured experiments](docs/experiments.md) · [Semantics contract](docs/semantics.md) · [Research foundations](docs/research-foundations.md) · [Launch film](https://github.com/nazeeh111/QLOOM/releases/download/v0.1.0/qloom-launch.mp4)
 
 ![Actual QLOOM Studio with a verified five-qubit compilation](docs/assets/studio.png)
+
+## Run the Studio
+
+Use **Python 3.11–3.13**; the full research environment was measured on Python 3.12. The core package includes the trained model and recorded experiment.
+
+```sh
+git clone https://github.com/nazeeh111/QLOOM.git
+cd QLOOM
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install '.[research]'
+qloom studio
+```
+
+Open **http://127.0.0.1:8765**. If that port is busy, use `qloom studio --port 18765`. Everything runs locally. The default external compiler limit is 45 seconds per invocation, including worker startup; failures and timeouts remain visible. `QLOOM_BASELINE_TIMEOUT` accepts 1–300 seconds.
+
+For a lighter installation, `pip install .` provides native compilation, trained inference and the Studio. Optional external compilers and noisy simulations appear as unavailable until the research extras are installed. The stored real demo remains inspectable.
 
 ## A compiler you can inspect
 
@@ -34,23 +51,6 @@ Learned minus random paired objective difference is **−0.734**, with a circuit
 ![Measured held-out selection regret; source data and plotting code are included](docs/figures/heldout-regret.png)
 
 The flagship QAOA example finds **32 CX**, tying Qiskit levels 2 and 3, compared with 44 for level 0 and 39 for QMAP on that run. Its BQSKit call timed out at 45 seconds and is displayed as unavailable. Other BQSKit comparisons completed successfully in the benchmark subset. This one demo is not evidence of broad superiority.
-
-## Run the Studio
-
-Use **Python 3.11–3.13**; the full research environment was measured on Python 3.12. The core package includes the trained model and recorded experiment.
-
-```sh
-git clone https://github.com/nazeeh111/QLOOM.git
-cd QLOOM
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install '.[research]'
-qloom studio
-```
-
-Open **http://127.0.0.1:8765**. If that port is busy, use `qloom studio --port 18765`. Everything runs locally. The default external compiler limit is 45 seconds per invocation, including worker startup; failures and timeouts remain visible. `QLOOM_BASELINE_TIMEOUT` accepts 1–300 seconds.
-
-For a lighter installation, `pip install .` provides native compilation, trained inference and the Studio. Optional external compilers and noisy simulations appear as unavailable until the research extras are installed. The stored real demo remains inspectable.
 
 ## Compile and export
 
