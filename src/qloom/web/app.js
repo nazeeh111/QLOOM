@@ -301,19 +301,19 @@
     $('results').hidden=false;$('empty-state').hidden=true;$('recorded-badge').hidden=!recorded;
     $('export-report').disabled=false;
     $('experiment-title').textContent=`${report.input.name||'Quantum circuit'} / ${report.device.name||'simulated device'}`;
-    $('experiment-subtitle').textContent=`${report.input.n_qubits} logical qubits · ${report.strategy||'learned'} search · ${report.candidates.length} real evaluations · seed ${report.seed}`;
+    $('experiment-subtitle').textContent=`${report.input.n_qubits} logical qubits · ${report.strategy||'learned'} search · ${report.candidates.length} real ${report.candidates.length === 1 ? 'evaluation' : 'evaluations'} · seed ${report.seed}`;
     $('input-circuit-meta').textContent=`${operations(report.input).length} operations · ${report.input.n_qubits} qubits`;
     renderCircuit($('input-circuit'),operations(report.input),report.input.n_qubits,'q',report.input.measurements||[]);
     $('candidate-select').innerHTML=report.candidates.map((c,i)=>`<option value="${esc(c.id)}">${c.id===report.best_id?'★ ':''}Candidate ${i+1} · ${fmt(c.metrics.two_qubit_gates)} CX</option>`).join('');
     selectCandidate(state.candidateId);renderNoise();
     if(recorded&&report.input.qasm){$('qasm-input').value=report.input.qasm;$('example-select').value='';$('example-description').textContent='Source from the recorded experiment';}
     const device=state.devices.find((d)=>d.name===report.device.name);if(recorded && device){$('device-select').value=device.name;updateDeviceSummary();}
-    if(recorded){$('budget-input').value=String(Math.min(24,report.budget||8));$('budget-output').textContent=`${$('budget-input').value} candidates`;$('seed-input').value=String(report.seed??7);if(['learned','heuristic','random'].includes(report.strategy))$('strategy-select').value=report.strategy;}
+    if(recorded){$('budget-input').value=String(Math.min(24,report.budget||8));$('budget-output').textContent=`${$('budget-input').value} ${Number($('budget-input').value) === 1 ? 'candidate' : 'candidates'}`;$('seed-input').value=String(report.seed??7);if(['learned','heuristic','random'].includes(report.strategy))$('strategy-select').value=report.strategy;}
     state.resultRequest = requestKey(); updateResultContext();
   }
   async function loadDemo() {
     if(state.busy)return;const revision=++state.sourceRevision;const started = requestKey();setBusy(true);setError('');status('Loading a recorded, reproducible compiler experiment…');
-    try{const report=await api('/api/demo');if(revision !== state.sourceRevision || requestKey() !== started){status('Inputs changed while loading. Your edits were kept; load the recording again when ready.');return;}renderReport(report,true);status(`Recorded experiment loaded. ${report.candidates.length} evaluated candidates; original runtime ${time(report.elapsed_s)}.`);}catch(error){setError(`Could not load the recorded experiment: ${error.message}`);status('You can still import a circuit and start a new compilation.');}finally{setBusy(false);}
+    try{const report=await api('/api/demo');if(revision !== state.sourceRevision || requestKey() !== started){status('Inputs changed while loading. Your edits were kept; load the recording again when ready.');return;}renderReport(report,true);status(`Recorded experiment loaded. ${report.candidates.length} evaluated ${report.candidates.length === 1 ? 'candidate' : 'candidates'}; original runtime ${time(report.elapsed_s)}.`);}catch(error){setError(`Could not load the recorded experiment: ${error.message}`);status('You can still import a circuit and start a new compilation.');}finally{setBusy(false);}
   }
   $('compile-form').addEventListener('submit',async(event)=>{
     event.preventDefault();if(state.busy)return;
@@ -323,12 +323,12 @@
     setBusy(true);stopReplay();setError('');status('Running real compiler evaluations and independent equivalence checks. This may take a moment; results appear when the request completes.');
     try{
       const report=await api('/api/compile',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({qasm:$('qasm-input').value,device:$('device-select').value,budget:Number($('budget-input').value),seed:Number($('seed-input').value),strategy:$('strategy-select').value})});
-      renderReport(report,false);state.resultRequest = submittedRequest;updateResultContext();status(`Complete: ${report.candidates.length} candidates evaluated in ${time(report.elapsed_s)}. Export the report to reproduce this run.`);
+      renderReport(report,false);state.resultRequest = submittedRequest;updateResultContext();status(`Complete: ${report.candidates.length} ${report.candidates.length === 1 ? 'candidate' : 'candidates'} evaluated in ${time(report.elapsed_s)}. Export the report to reproduce this run.`);
     }catch(error){setError(`Compilation could not complete: ${error.message}`);status('Your source is preserved. Correct the input or device selection and try again.');}finally{setBusy(false);}
   });
   $('example-select').addEventListener('change',()=>{state.sourceRevision++;loadExample($('example-select').value);state.edited=true;updateResultContext();});
   $('device-select').addEventListener('change',()=>{updateDeviceSummary();updateResultContext();});
-  $('budget-input').addEventListener('input',()=>{$('budget-output').textContent=`${$('budget-input').value} candidates`;updateResultContext();});
+  $('budget-input').addEventListener('input',()=>{$('budget-output').textContent=`${$('budget-input').value} ${Number($('budget-input').value) === 1 ? 'candidate' : 'candidates'}`;updateResultContext();});
   $('qasm-input').addEventListener('input',()=>{state.sourceRevision++;$('example-select').value='';$('example-description').textContent='Custom OpenQASM source';state.edited=true;updateResultContext();});
   for (const id of ['seed-input','strategy-select']) $(id).addEventListener('input',updateResultContext);
   $('demo-button').addEventListener('click',loadDemo);

@@ -4,6 +4,8 @@
 
 Compile quantum circuits on a CPU, inspect routing, and verify their logical meaning. QLOOM ranks native strategies with a trained, graph-aware policy, evaluates a strict candidate budget, and exports the physical circuit with mappings, phase and an experiment report.
 
+This checkout is the unreleased `0.1.1.dev0` source. The historical `v0.1.0` release and frozen studies retain their original artifacts.
+
 [Quickstart](#run-the-studio) · [How it works](docs/method.md) · [Measured experiments](docs/experiments.md) · [Semantics contract](docs/semantics.md) · [Research foundations](docs/research-foundations.md) · [Launch film](https://github.com/nazeeh111/QLOOM/releases/download/v0.1.0/qloom-launch.mp4)
 
 ![QLOOM Studio comparing a five-qubit GHZ input and a routed circuit](docs/assets/studio-live.jpg)

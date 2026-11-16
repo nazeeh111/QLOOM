@@ -17,7 +17,7 @@ from .examples import example_list
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 lock = Lock()
-app = FastAPI(title="QLOOM local compiler", version="0.1.0", docs_url="/api/docs")
+app = FastAPI(title="QLOOM local compiler", version="0.1.1.dev0", docs_url="/api/docs")
 
 
 class CompileRequest(BaseModel):
