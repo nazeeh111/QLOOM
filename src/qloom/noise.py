@@ -3,6 +3,7 @@
 import numpy as np
 
 from .circuits import operations
+from .report_policy import NOISE_ASSUMPTIONS, NOISE_LIMIT, NOISE_METHOD, NOISE_UNAVAILABLE
 from .verify import classical_probabilities, evolve, permutation
 
 
@@ -15,7 +16,7 @@ def simulate_probabilities(qc, final, device, measurements, n_clbits, seed=0):
         from qiskit_aer import AerSimulator
         from qiskit_aer.noise import NoiseModel, depolarizing_error
     except ImportError as exc:
-        raise ImportError("Install qloom-compiler[research] for noisy density-matrix simulation.") from exc
+        raise ImportError(NOISE_UNAVAILABLE) from exc
     noise = NoiseModel()
     noise.add_all_qubit_quantum_error(depolarizing_error(device.single_error, 1), ["u"])
     noise.add_all_qubit_quantum_error(depolarizing_error(device.two_error, 2), ["cx"])
@@ -37,7 +38,7 @@ def compare_noise(reference, best, baseline, device, measurements, n_clbits, see
     if reference.num_qubits > 6:
         return {
             "method": "not-run",
-            "assumptions": "Density-matrix demo limited to <=6 qubits; logical proof still runs.",
+            "assumptions": NOISE_LIMIT,
         }
     zero = np.zeros(1 << reference.num_qubits, complex)
     zero[0] = 1
@@ -48,8 +49,8 @@ def compare_noise(reference, best, baseline, device, measurements, n_clbits, see
     p = simulate_probabilities(best[0], best[1], device, measurements, n_clbits, seed)
     q = simulate_probabilities(baseline[0], baseline[1], device, measurements, n_clbits, seed)
     return {
-        "method": "Aer exact density matrix; zero logical input; output distribution fidelity",
-        "assumptions": "Synthetic U/CX depolarizing errors + independent symmetric readout. No T1/T2, crosstalk, pulse physics or QPU data. Input comparison is Qiskit level 0 on the SAME device. Distribution similarity is not equivalence proof.",
+        "method": NOISE_METHOD,
+        "assumptions": NOISE_ASSUMPTIONS,
         "ideal_probabilities": ideal.tolist(),
         "optimized_probabilities": p.tolist(),
         "input_probabilities": q.tolist(),

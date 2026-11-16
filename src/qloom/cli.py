@@ -42,7 +42,7 @@ def main(argv=None):
     c.add_argument("--model", type=Path)
     c.add_argument("--skip-baselines", action="store_true")
     c.add_argument("--skip-noise", action="store_true")
-    c.add_argument("--cache", type=Path, help="Optional trusted local content-addressed report cache")
+    c.add_argument("--cache", type=Path, help="Optional local report cache; hits are independently reverified")
     s = sub.add_parser("studio", help="Run the local interactive Quantum Compiler Studio")
     s.add_argument("--port", type=int, default=8765)
     e = sub.add_parser("examples", help="Write reproducible OpenQASM examples")
@@ -77,6 +77,10 @@ def main(argv=None):
                 args.cache,
             )
             save_bundle(report, args.out)
+            if report["cache"]["status"] == "rejected":
+                print(f"Cache rejected; recomputed: {report['cache']['reason']}")
+            if "write_error" in report["cache"]:
+                print(f"Cache not saved: {report['cache']['write_error']}")
             best = next(c for c in report["candidates"] if c["id"] == report["best_id"])
             print(
                 f"Verified {len(report['candidates'])} candidates. Best {best['id']}: "

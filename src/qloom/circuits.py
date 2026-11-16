@@ -58,9 +58,11 @@ SUPPORTED = {
 MAX_OPERATIONS = 400
 
 
-def load_qasm(text: str) -> QuantumCircuit:
-    if len(text.encode()) > 100_000:
-        raise ValueError("OpenQASM input exceeds 100 KB.")
+def load_qasm(text: str, *, max_operations: int | None = MAX_OPERATIONS) -> QuantumCircuit:
+    # Routed outputs may expand beyond the input operation/byte limits.
+    max_bytes = 100_000 if max_operations is not None else 1_000_000
+    if len(text.encode()) > max_bytes:
+        raise ValueError(f"OpenQASM input exceeds {max_bytes} bytes.")
     # qelib1.inc is resolved by Qiskit; arbitrary filesystem includes are forbidden.
     import re
 
@@ -80,7 +82,7 @@ def load_qasm(text: str) -> QuantumCircuit:
         qc = qasm2.loads(text, include_path=(), custom_instructions=qasm2.LEGACY_CUSTOM_INSTRUCTIONS)
     except Exception as exc:
         raise ValueError(f"Invalid or unsupported OpenQASM 2: {exc}") from exc
-    validate(qc)
+    validate(qc, max_operations=max_operations)
     return qc
 
 
@@ -142,17 +144,24 @@ def operations(qc):
     ]
 
 
-def serialize_input(qc):
+def circuit_identity(qc):
+    """Exact ordered circuit content, independent of display/register names.
+
+    This is structural identity, not a test for equivalence of different circuits.
+    Barriers are omitted because the compiler explicitly ignores them.
+    """
     _, measurements = split_circuit(qc)
     return {
-        "name": qc.name,
         "n_qubits": qc.num_qubits,
         "n_clbits": qc.num_clbits,
         "operations": operations(qc),
         "measurements": measurements,
         "global_phase": float(qc.global_phase),
-        "qasm": qasm2.dumps(qc),
     }
+
+
+def serialize_input(qc):
+    return {"name": qc.name, **circuit_identity(qc), "qasm": qasm2.dumps(qc)}
 
 
 def export_qasm(physical, measurements, final_mapping, n_clbits):

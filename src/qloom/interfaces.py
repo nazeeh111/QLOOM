@@ -63,4 +63,5 @@ class CompilationReport(TypedDict):
     optimizer_time_s: float
     elapsed_s: float
     cache_hit: bool
+    cache: NotRequired[dict]
     export_note: str

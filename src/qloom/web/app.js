@@ -3,18 +3,29 @@
   const $ = (id) => document.getElementById(id);
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const finite = (value, fallback = 0) => Number.isFinite(Number(value)) ? Number(value) : fallback;
-  const fmt = (value, digits = 0) => Number.isFinite(Number(value)) ? Number(value).toLocaleString(undefined, {maximumFractionDigits: digits}) : '—';
-  const pct = (value) => Number.isFinite(Number(value)) ? `${(Number(value) * 100).toFixed(1)}%` : '—';
-  const sci = (value) => Number.isFinite(Number(value)) ? Number(value).toExponential(2) : '—';
-  const time = (value) => !Number.isFinite(Number(value)) ? '—' : Number(value) < 1 ? `${fmt(Number(value) * 1000, 1)} ms` : `${fmt(value, 2)} s`;
+  const isNumber = (value) => value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
+  const fmt = (value, digits = 0) => isNumber(value) ? Number(value).toLocaleString(undefined, {maximumFractionDigits: digits}) : '—';
+  const pct = (value) => isNumber(value) ? `${(Number(value) * 100).toFixed(1)}%` : '—';
+  const sci = (value) => isNumber(value) ? Number(value).toExponential(2) : '—';
+  const time = (value) => !isNumber(value) ? '—' : Number(value) < 1 ? `${fmt(Number(value) * 1000, 1)} ms` : `${fmt(value, 2)} s`;
   const ns = (value) => finite(value) >= 1000 ? `${fmt(finite(value) / 1000, 2)} µs` : `${fmt(value)} ns`;
-  const state = {examples: [], devices: [], report: null, candidateId: null, historyIndex: 0, selectedQubit: null, replay: null, busy: false};
+  const state = {examples: [], devices: [], report: null, candidateId: null, historyIndex: 0, selectedQubit: null, replay: null, busy: false, resultRequest: null, edited: false, sourceRevision: 0};
   const svg = (w, h, body, label = '') => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"${label ? ` aria-label="${esc(label)}"` : ''}>${body}</svg>`;
   const setError = (message) => { $('error-message').textContent = message || ''; $('error-message').hidden = !message; };
   async function api(path, options) {
     const response = await fetch(path, options);
     if (!response.ok) { let detail; try { detail = (await response.json()).detail; } catch (_) { detail = response.statusText; } throw new Error(typeof detail === 'string' ? detail : JSON.stringify(detail)); }
     return response.json();
+  }
+  function requestKey() { return JSON.stringify([$('qasm-input').value, $('device-select').value, $('budget-input').value, $('seed-input').value, $('strategy-select').value]); }
+  function updateResultContext() {
+    if (!state.report) return;
+    const changed = state.resultRequest !== requestKey();
+    const cache = state.report.cache || {};
+    const cacheText = cache.status === 'disabled' ? 'Cache disabled for Studio runs.' : cache.status === 'verified-hit' ? 'Verified cache hit; historical timings are retained.' : cache.status === 'rejected' ? `Cache entry rejected; compiled again. ${cache.reason || ''}` : cache.status === 'miss' ? 'Cache miss; compiled a new result.' : 'Cache status not recorded.';
+    $('result-context').hidden = false;
+    $('result-context').textContent = `${changed ? 'Inputs changed. The result below belongs to the previous request. Compile again to update it. ' : 'Result matches the current inputs. '}${cacheText}${cache.write_error ? ` Cache write failed: ${cache.write_error}` : ''}`;
+    $('result-context').classList.toggle('is-stale', changed);
   }
   function candidate() { return state.report?.candidates?.find((c) => c.id === state.candidateId) || state.report?.candidates?.[0]; }
   function status(message) { $('request-status').textContent = message; }
@@ -116,7 +127,7 @@
     $('metric-verified').textContent = v.passed ? 'Equivalent' : 'Not verified';
     $('verification-icon').textContent = v.passed ? '✓' : '!';
     $('verification-icon').style.color = v.passed ? 'var(--green)' : 'var(--rust)';
-    $('metric-error').textContent = `Max residual ${sci(v.max_error)} · full-unitary check`;
+    $('metric-error').textContent = `Max residual ${sci(v.max_error)}`;
     const baseline = (state.report.baselines || []).find((b) => b.name?.toLowerCase().includes('qiskit') && (b.name.includes('3') || b.id?.includes('3')) && b.metrics);
     if (baseline) {
       const difference = finite(baseline.metrics.two_qubit_gates) - finite(m.two_qubit_gates);
@@ -152,12 +163,14 @@
       const logical = mapping.indexOf(q), selected = state.selectedQubit === q, isActive = active.includes(q);
       body += `<g class="graph-node" tabindex="0" role="button" data-qubit="${q}" aria-label="Physical qubit ${q}, ${logical >= 0 ? `logical qubit ${logical}` : 'unassigned'}" aria-pressed="${selected}"><circle cx="${p.x}" cy="${p.y}" r="21" fill="${selected || isActive ? '#f6eddc' : '#fffefa'}" stroke="${selected || isActive ? '#bc7e35' : '#547b8e'}" stroke-width="${selected ? 2.5 : 1.4}"/><text x="${p.x}" y="${p.y - 2}" text-anchor="middle" font-family="monospace" font-size="11" fill="#203239">p${q}</text><text x="${p.x}" y="${p.y + 10}" text-anchor="middle" font-family="monospace" font-size="8" fill="#758084">${logical >= 0 ? `q${logical}` : 'idle'}</text></g>`;
     });
+    const focusedQubit = document.activeElement?.closest?.('[data-qubit]')?.dataset.qubit;
     $('hardware-graph').innerHTML = svg(W,H,body);
     $('hardware-graph').querySelectorAll('[data-qubit]').forEach((el) => {
       const activate = () => { state.selectedQubit = Number(el.dataset.qubit); renderHardware(); };
       el.addEventListener('click', activate);
       el.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activate(); } });
     });
+    if (focusedQubit !== undefined) [...$('hardware-graph').querySelectorAll('[data-qubit]')].find((el) => el.dataset.qubit === focusedQubit)?.focus();
     $('mapping-list').innerHTML = mapping.map((p,q) => `<div class="mapping-item${state.selectedQubit === p || active.includes(p) ? ' active' : ''}">q${q}<span class="mapping-arrow">→</span>p${esc(p)}</div>`).join('');
     $('topology-label').textContent = String(device.name || 'SIMULATED').replace(/_/g,' ').toUpperCase();
     $('history-input').max = String(history.length - 1);
@@ -200,12 +213,14 @@
       const px=x(finite(c.metrics.two_qubit_gates)),py=y(finite(c.metrics.duration_ns)/1000),isFront=pareto.includes(c.id),selected=c.id===state.candidateId;
       body+=`<g class="chart-point" tabindex="0" role="button" data-candidate="${esc(c.id)}" aria-label="Candidate ${esc(c.id)}, ${fmt(c.metrics.two_qubit_gates)} two-qubit gates, ${ns(c.metrics.duration_ns)}${selected?', selected':''}"><title>${esc(c.id)} · ${fmt(c.metrics.two_qubit_gates)} CX · ${ns(c.metrics.duration_ns)}</title>${selected?`<circle cx="${px}" cy="${py}" r="8.5" fill="none" stroke="#203239" stroke-width="1"/>`:''}<circle cx="${px}" cy="${py}" r="${selected?4.5:4}" fill="${isFront?'#bc7e35':'#6b91a5'}" stroke="#fffefa" stroke-width="1.5"/></g>`;
     });
+    const focusedCandidate = document.activeElement?.closest?.('[data-candidate]')?.dataset.candidate;
     $('pareto-chart').innerHTML=svg(W,H,body);
     $('pareto-chart').querySelectorAll('[data-candidate]').forEach((el)=>{
       const activate=()=>selectCandidate(el.dataset.candidate);
       el.addEventListener('click',activate);
       el.addEventListener('keydown',(event)=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();activate();}});
     });
+    if (focusedCandidate !== undefined) [...$('pareto-chart').querySelectorAll('[data-candidate]')].find((el) => el.dataset.candidate === focusedCandidate)?.focus();
     $('evaluated-count').textContent=`${list.length} EVALUATED`;
     $('search-time').textContent=`${time(state.report.optimizer_time_s ?? state.report.search_time_s)} search + verification`;
     renderProgress(list);
@@ -227,18 +242,21 @@
     const values=[['INITIAL LAYOUT',conf.layout],['ROUTING POLICY',conf.routing],['LOOKAHEAD',conf.lookahead],['REWRITE',conf.rewrite ? 'Enabled' : 'Disabled'],['SURROGATE SCORE',c.model_prediction === null || c.model_prediction === undefined ? 'Not used' : fmt(c.model_prediction,4)]];
     $('candidate-config').innerHTML=values.map(([label,value])=>`<div class="config-item"><span>${esc(label)}</span><strong>${esc(value ?? '—')}</strong></div>`).join('');
     const measurement=state.report.input.measurements||[];
-    $('verification-detail').innerHTML=`<div><h4>${v.passed?'Verified logical equivalence':'Candidate has not passed verification'}</h4><p>Method: <code>${esc(v.method||'unreported')}</code><br>Matrix residual: <code>${sci(v.max_error)}</code><br>Global phase error: <code>${sci(v.global_phase_error)}</code><br>Random input residual: <code>${sci(v.randomized_max_error)}</code> over <code>${fmt(v.trials)}</code> trials.</p><p>Initial mapping: <code>${esc(JSON.stringify(c.initial_mapping))}</code><br>Final mapping: <code>${esc(JSON.stringify(c.final_mapping))}</code><br>Global phase: <code>${esc(c.global_phase ?? 0)}</code> rad.<br>Classical outputs: <code>${esc(JSON.stringify(measurement))}</code></p></div><div><h4>Reproduce this experiment</h4><p>Strategy <code>${esc(state.report.strategy)}</code>, seed <code>${esc(state.report.seed)}</code>, budget <code>${esc(state.report.budget)}</code>.<br>Model <code>${esc(model.name||'none')}</code>; ${fmt(model.training_rows)} evaluated training rows from ${fmt(model.training_circuits)} circuits.<br>Model SHA-256: <code>${esc(model.sha256||'not supplied')}</code></p><p>${esc(state.report.export_note||'OpenQASM 2 does not encode global phase. Preserve the JSON report or mapping and phase sidecar with your exported circuit.')}</p></div>`;
+    $('verification-detail').innerHTML=`<div><h4>${v.passed?'Verified logical equivalence':'Candidate has not passed verification'}</h4><p>The independent numerical check compares the logical action with the routed circuit using its mappings and phase. A small residual is numerical evidence for this circuit, not a claim about physical hardware.</p><p>Method: <code>${esc(v.method||'unreported')}</code><br>Matrix residual: <code>${sci(v.max_error)}</code><br>Global phase error: <code>${sci(v.global_phase_error)}</code><br>Random input residual: <code>${sci(v.randomized_max_error)}</code> over <code>${fmt(v.trials)}</code> trials.</p><p>Initial mapping: <code>${esc(JSON.stringify(c.initial_mapping))}</code><br>Final mapping: <code>${esc(JSON.stringify(c.final_mapping))}</code><br>Global phase: <code>${esc(c.global_phase ?? 0)}</code> rad.<br>Classical outputs: <code>${esc(JSON.stringify(measurement))}</code></p></div><div><h4>Reproduce this experiment</h4><p>Strategy <code>${esc(state.report.strategy)}</code>, seed <code>${esc(state.report.seed)}</code>, budget <code>${esc(state.report.budget)}</code>.<br>Model <code>${esc(model.name||'none')}</code>; ${fmt(model.training_rows)} evaluated training rows from ${fmt(model.training_circuits)} circuits.<br>Model SHA-256: <code>${esc(model.sha256||'not supplied')}</code></p><p>${esc(state.report.export_note||'OpenQASM 2 does not encode global phase. Preserve the JSON report or mapping and phase sidecar with your exported circuit.')}</p></div>`;
     $('model-label').textContent=`${model.name||'QLOOM'} / ${fmt(model.training_rows)} TRAINING EVALUATIONS`;
   }
   function renderBaselines(c) {
     const entries=[{...c,metrics:{...c.metrics,compile_time_s:state.report.optimizer_time_s ?? state.report.search_time_s},name:'QLOOM · search',selected:true},...(state.report.baselines||[])];
     $('baseline-table').innerHTML=entries.map((b)=>{
       const m=b.metrics,v=b.verification;
-      if(!m)return `<tr><td>${esc(b.name||b.id)}</td><td colspan="4" class="failure-pill" title="${esc(b.reason||b.status||'Unavailable')}">${esc(b.status||'Unavailable')}: ${esc(b.reason||'No measurements reported')}</td></tr>`;
+      if(!m){
+        const label = b.status === 'unavailable' ? 'Unavailable in this run' : b.status === 'failed' ? 'Failed in this run' : 'Unavailable or failed in this run';
+        return `<tr><td>${esc(b.name||b.id)}</td><td colspan="4" class="failure-pill"><details class="baseline-reason"><summary>${label}</summary><p>${esc(b.reason||'No reason reported.')}</p></details></td></tr>`;
+      }
       return `<tr class="${b.selected?'selected-baseline':''}"><td>${esc(b.name||b.id)}</td><td>${fmt(m.two_qubit_gates)}</td><td>${fmt(m.depth)}</td><td>${time(m.compile_time_s)}</td><td class="${v?.passed?'check-text':'fail-text'}">${v?.passed?'✓ Yes':'! No'}</td></tr>`;
     }).join('');
     const unavailable=(state.report.baselines||[]).filter((b)=>!b.metrics).length;
-    $('baseline-note').textContent=`QLOOM time covers ranking, search and verification; baseline times cover their compiler calls. Effort can differ.${unavailable?` ${unavailable} baseline${unavailable===1?' is':'s are'} unavailable in this run; reasons are recorded above.`:''} All reported compiled circuits use the selected device constraints.`;
+    $('baseline-note').textContent=`QLOOM time covers ranking, search and verification; baseline times cover their compiler calls. Effort can differ.${unavailable?` ${unavailable} baseline${unavailable===1?' has':'s have'} no measurements; expand the status above for details.`:''} All reported compiled circuits use the selected device constraints.`;
   }
   function probabilityEntries(value) {
     if(Array.isArray(value))return value.map((p,i)=>[i.toString(2).padStart(state.report.input.n_qubits,'0'),finite(p)]);
@@ -247,9 +265,12 @@
   }
   function renderNoise() {
     const noise=state.report.noise;
-    if(!noise){
-      $('noise-summary').innerHTML='<p class="noise-empty">No noisy simulation was included in this report.</p>';
-      $('noise-chart').innerHTML='';$('noise-assumptions').textContent='Logical equivalence evidence remains available independently.';return;
+    const missing = !noise || ['unavailable','not-run'].includes(noise.method);
+    $('noise-chart').hidden=missing;$('noise-legend').hidden=missing;
+    if(missing){
+      const label = noise?.method === 'unavailable' ? 'Noisy simulation unavailable in this run.' : 'No noisy simulation was included in this report.';
+      $('noise-summary').innerHTML=`<p class="noise-empty">${label} Logical equivalence is checked separately.</p>`;
+      $('noise-chart').innerHTML='';$('noise-assumptions').textContent=noise?.assumptions || 'No additional reason was recorded.';return;
     }
     $('noise-summary').innerHTML=`<div class="noise-stat compiled"><span>Compiled output fidelity</span><strong>${pct(noise.optimized_fidelity)}</strong></div><div class="noise-stat reference"><span>Reference output fidelity</span><strong>${pct(noise.input_fidelity)}</strong></div>`;
     const ideal=Object.fromEntries(probabilityEntries(noise.ideal_probabilities)),compiled=Object.fromEntries(probabilityEntries(noise.optimized_probabilities)),reference=Object.fromEntries(probabilityEntries(noise.input_probabilities));
@@ -286,33 +307,38 @@
     $('candidate-select').innerHTML=report.candidates.map((c,i)=>`<option value="${esc(c.id)}">${c.id===report.best_id?'★ ':''}Candidate ${i+1} · ${fmt(c.metrics.two_qubit_gates)} CX</option>`).join('');
     selectCandidate(state.candidateId);renderNoise();
     if(recorded&&report.input.qasm){$('qasm-input').value=report.input.qasm;$('example-select').value='';$('example-description').textContent='Source from the recorded experiment';}
-    const device=state.devices.find((d)=>d.name===report.device.name);if(device){$('device-select').value=device.name;updateDeviceSummary();}
+    const device=state.devices.find((d)=>d.name===report.device.name);if(recorded && device){$('device-select').value=device.name;updateDeviceSummary();}
     if(recorded){$('budget-input').value=String(Math.min(24,report.budget||8));$('budget-output').textContent=`${$('budget-input').value} candidates`;$('seed-input').value=String(report.seed??7);if(['learned','heuristic','random'].includes(report.strategy))$('strategy-select').value=report.strategy;}
+    state.resultRequest = requestKey(); updateResultContext();
   }
   async function loadDemo() {
-    if(state.busy)return;setBusy(true);setError('');status('Loading a recorded, reproducible compiler experiment…');
-    try{const report=await api('/api/demo');renderReport(report,true);status(`Recorded experiment loaded. ${report.candidates.length} evaluated candidates; original runtime ${time(report.elapsed_s)}.`);}catch(error){setError(`Could not load the recorded experiment: ${error.message}`);status('You can still import a circuit and start a new compilation.');}finally{setBusy(false);}
+    if(state.busy)return;const revision=++state.sourceRevision;const started = requestKey();setBusy(true);setError('');status('Loading a recorded, reproducible compiler experiment…');
+    try{const report=await api('/api/demo');if(revision !== state.sourceRevision || requestKey() !== started){status('Inputs changed while loading. Your edits were kept; load the recording again when ready.');return;}renderReport(report,true);status(`Recorded experiment loaded. ${report.candidates.length} evaluated candidates; original runtime ${time(report.elapsed_s)}.`);}catch(error){setError(`Could not load the recorded experiment: ${error.message}`);status('You can still import a circuit and start a new compilation.');}finally{setBusy(false);}
   }
   $('compile-form').addEventListener('submit',async(event)=>{
     event.preventDefault();if(state.busy)return;
     if(!$('qasm-input').value.trim()){setError('Add an OpenQASM circuit or choose an example before compiling.');return;}
     if(!$('device-select').value){setError('Choose an available simulated processor.');return;}
+    const submittedRequest = requestKey();
     setBusy(true);stopReplay();setError('');status('Running real compiler evaluations and independent equivalence checks. This may take a moment; results appear when the request completes.');
     try{
       const report=await api('/api/compile',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({qasm:$('qasm-input').value,device:$('device-select').value,budget:Number($('budget-input').value),seed:Number($('seed-input').value),strategy:$('strategy-select').value})});
-      renderReport(report,false);status(`Complete: ${report.candidates.length} candidates evaluated in ${time(report.elapsed_s)}. Export the report to reproduce this run.`);
+      renderReport(report,false);state.resultRequest = submittedRequest;updateResultContext();status(`Complete: ${report.candidates.length} candidates evaluated in ${time(report.elapsed_s)}. Export the report to reproduce this run.`);
     }catch(error){setError(`Compilation could not complete: ${error.message}`);status('Your source is preserved. Correct the input or device selection and try again.');}finally{setBusy(false);}
   });
-  $('example-select').addEventListener('change',()=>loadExample($('example-select').value));
-  $('device-select').addEventListener('change',updateDeviceSummary);
-  $('budget-input').addEventListener('input',()=>{$('budget-output').textContent=`${$('budget-input').value} candidates`;});
-  $('qasm-input').addEventListener('input',()=>{$('example-select').value='';$('example-description').textContent='Custom OpenQASM source';});
+  $('example-select').addEventListener('change',()=>{state.sourceRevision++;loadExample($('example-select').value);state.edited=true;updateResultContext();});
+  $('device-select').addEventListener('change',()=>{updateDeviceSummary();updateResultContext();});
+  $('budget-input').addEventListener('input',()=>{$('budget-output').textContent=`${$('budget-input').value} candidates`;updateResultContext();});
+  $('qasm-input').addEventListener('input',()=>{state.sourceRevision++;$('example-select').value='';$('example-description').textContent='Custom OpenQASM source';state.edited=true;updateResultContext();});
+  for (const id of ['seed-input','strategy-select']) $(id).addEventListener('input',updateResultContext);
   $('demo-button').addEventListener('click',loadDemo);
   $('import-button').addEventListener('click',()=>$('file-input').click());
   $('file-input').addEventListener('change',async()=>{
     const file=$('file-input').files?.[0];if(!file)return;
-    if(file.size>100000){setError('Choose an OpenQASM file smaller than 100 KB.');$('file-input').value='';return;}
-    try{$('qasm-input').value=await file.text();$('example-select').value='';$('example-description').textContent=`Imported ${file.name}`;matchCircuitWidth();setError('');}catch(error){setError(`Could not read the file: ${error.message}`);}finally{$('file-input').value='';}
+    const revision=++state.sourceRevision;state.edited=true;
+    $('file-input').value='';
+    if(file.size>100000){setError('Choose an OpenQASM file smaller than 100 KB.');return;}
+    try{const text=await file.text();if(revision!==state.sourceRevision)return;$('qasm-input').value=text;$('example-select').value='';$('example-description').textContent=`Imported ${file.name}`;matchCircuitWidth();updateResultContext();setError('');}catch(error){if(revision===state.sourceRevision)setError(`Could not read the file: ${error.message}`);}
   });
   $('candidate-select').addEventListener('change',()=>selectCandidate($('candidate-select').value));
   $('history-input').addEventListener('input',()=>{stopReplay();state.historyIndex=Number($('history-input').value);renderHardware();});
@@ -339,14 +365,13 @@
     if(results[0].status==='fulfilled'){
       state.examples=results[0].value;
       $('example-select').innerHTML='<option value="">Custom circuit</option>'+state.examples.map((e)=>`<option value="${esc(e.id)}">${esc(e.name)}</option>`).join('');
-      if(state.examples.length){$('example-select').value=state.examples[0].id;loadExample(state.examples[0].id);}
+      if(state.examples.length && !state.edited && !$('qasm-input').value){$('example-select').value=state.examples[0].id;loadExample(state.examples[0].id);}
     }else{$('example-select').innerHTML='<option value="">Custom circuit</option>';setError(`Could not load examples: ${results[0].reason.message}`);}
     if(results[1].status==='fulfilled'){
       state.devices=results[1].value;
       $('device-select').innerHTML=state.devices.map((d)=>`<option value="${esc(d.name)}">${esc(d.name.replace(/_/g,' '))} · ${d.n_qubits} qubits</option>`).join('');
       matchCircuitWidth(); updateDeviceSummary();
     }else{$('device-select').innerHTML='<option value="">Devices unavailable</option>';setError(`Could not load devices: ${results[1].reason.message}`);}
-    await loadDemo();
   }
   init();
 })();

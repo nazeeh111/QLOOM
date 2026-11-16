@@ -6,7 +6,9 @@ Compile quantum circuits on a CPU, inspect routing, and verify their logical mea
 
 [Quickstart](#run-the-studio) · [How it works](docs/method.md) · [Measured experiments](docs/experiments.md) · [Semantics contract](docs/semantics.md) · [Research foundations](docs/research-foundations.md) · [Launch film](https://github.com/nazeeh111/QLOOM/releases/download/v0.1.0/qloom-launch.mp4)
 
-![Actual QLOOM Studio with a verified five-qubit compilation](docs/assets/studio.png)
+![QLOOM Studio comparing a five-qubit GHZ input and a routed circuit](docs/assets/studio-live.jpg)
+
+*Local Studio run: five-qubit GHZ circuit, synthetic line-5 device, learned search, eight candidate evaluations and seed 7. The displayed timing is a synthetic gate-duration estimate; equivalence is a numerical check. [Capture details](docs/assets/studio-live-provenance.md).*
 
 ## Run the Studio
 
@@ -17,13 +19,13 @@ git clone https://github.com/nazeeh111/QLOOM.git
 cd QLOOM
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install '.[research]'
+python -m pip install .
 qloom studio
 ```
 
 Open **http://127.0.0.1:8765**. If that port is busy, use `qloom studio --port 18765`. Everything runs locally. The default external compiler limit is 45 seconds per invocation, including worker startup; failures and timeouts remain visible. `QLOOM_BASELINE_TIMEOUT` accepts 1–300 seconds.
 
-For a lighter installation, `pip install .` provides native compilation, trained inference and the Studio. Optional external compilers and noisy simulations appear as unavailable until the research extras are installed. The stored real demo remains inspectable.
+The core installation provides native compilation, trained inference and the Studio. External compilers and noisy simulations appear as unavailable until you install `.[research]`. The stored demo remains inspectable. To compile a circuit without those extras, use the native-only command in [Compile and export](#compile-and-export).
 
 ## A compiler you can inspect
 

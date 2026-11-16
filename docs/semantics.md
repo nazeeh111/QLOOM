@@ -26,6 +26,45 @@ OpenQASM2 does not encode global phase or logical placement metadata. Use all th
 
 To reload a unitary for exact comparison, parse QASM, strip terminal measurements, set its global phase from the sidecar, and pass **both mappings** to `qloom.verify.verify`. Treat QASM alone as a physical program; it is insufficient to reconstruct the logical operator. Studio embeds a reminder and mapping/phase comments in its QASM download, and separately exports the full JSON.
 
+## Local cache contract
+
+`compile_circuit(..., cache_dir=...)` and `qloom compile --cache ...` use a
+versioned local report envelope. Its key includes ordered standard operations,
+parameters, qubit/classical widths, terminal measurement destinations, global
+phase, device data, seed, budget, strategy, model digest and requested options.
+Display names, register spelling and ignored barriers do not affect identity.
+Different but mathematically equivalent gate sequences may still use separate
+entries. There is no floating-point rounding or global-phase normalization in
+the identity.
+
+Package source hashes, Python/platform identity, installed numerical/optional
+compiler versions and the external-baseline timeout also bind the key. Old-format
+entries are not migrated or trusted. Existing files are not deleted automatically.
+
+Before returning a hit, QLOOM checks the envelope checksum and request, reparses
+each successful candidate's QASM with restricted includes, checks its operation
+list and original classical destinations, restores JSON global phase and both
+mappings, and reruns the same full-unitary, measurement and device constraints
+as cold compilation. Candidate costs, best selection and Pareto membership are
+checked again. Successful cached baselines receive their original fixed
+verification tolerance, never a tolerance supplied by the cache.
+
+`cache_hit` is true only after acceptance. `cache.status` is `disabled`, `miss`,
+`rejected` (with a reason), or `verified-hit`. A rejected entry triggers fresh
+compilation; cache write failures remain diagnostic fields on the valid result.
+Unique same-directory temporary files and atomic replacement prevent overlapping
+writers from publishing partial JSON.
+
+On a hit, report generation/search timings remain the original observations;
+`cache.lookup_verification_s` measures the current lookup and verification.
+Model metadata and export guidance are checked against the current request and code.
+Simulated noise distributions are checked for valid probabilities, the ideal
+distribution and fidelity arithmetic; they remain historical observations, not
+newly rerun simulations. Unavailable baseline outcomes, model predictions and
+routing history also remain stored observations.
+Checksums are accidental-corruption checks, not signatures or authentication.
+The cache makes no performance or quantum-advantage claim.
+
 ## Limits of evidence
 
 The check is numerical, within an explicit tolerance, and bounded to eight qubits. Random input checks supplement the full operator comparison rather than proving large-system equivalence. No formal proof engine or large-circuit verification is claimed. Synthetic gate-error products are heuristic estimates. Density-matrix results are simulated output-distribution fidelities on the zero logical input, not full state/process fidelities or QPU measurements.

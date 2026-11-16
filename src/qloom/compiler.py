@@ -1,78 +1,21 @@
 """Verified budgeted configuration search and reproducible report assembly."""
 
-import json
-from hashlib import sha256
 from pathlib import Path
 from time import perf_counter
 
 import numpy as np
 from qiskit import QuantumCircuit
 
-from .circuits import export_qasm, load_qasm, operations, serialize_input, split_circuit
-from .cost import metrics, pareto
+from .cache import digest, read_report, request_identity, write_report
+from .candidates import candidate_record
+from .circuits import load_qasm, serialize_input, split_circuit
+from .cost import pareto
 from .devices import Device, make_device
 from .features import features
 from .interfaces import CompilationReport
+from .report_policy import EXPORT_NOTE, NOISE_NOT_RUN, baseline_names, baseline_tolerance
 from .routing import CONFIGS, native_compile
 from .surrogate import Surrogate
-from .verify import verify
-
-
-def candidate_record(
-    reference,
-    physical,
-    initial,
-    final,
-    device,
-    measurements,
-    n_clbits,
-    identifier,
-    config,
-    elapsed,
-    history=None,
-    seed=0,
-    tolerance=1e-8,
-):
-    verification = verify(reference, physical, initial, final, seed, tolerance)
-    if not verification["passed"]:
-        raise ValueError(
-            f"Candidate {identifier} failed independent equivalence: {verification['max_error']:.3g}"
-        )
-    qasm = export_qasm(physical, measurements, final, n_clbits)
-    if measurements:
-        from qiskit import qasm2
-
-        from .circuits import validate
-        from .verify import verify_measurement_export
-
-        exported = qasm2.loads(qasm, custom_instructions=qasm2.LEGACY_CUSTOM_INSTRUCTIONS)
-        validate(exported, max_operations=None)
-        actual = [
-            [exported.find_bit(i.qubits[0]).index, exported.find_bit(i.clbits[0]).index]
-            for i in exported.data
-            if i.operation.name == "measure"
-        ]
-        if actual != [[final[q], c] for q, c in measurements]:
-            raise ValueError("Export changed classical measurement destinations.")
-        measurement_check = verify_measurement_export(reference, exported, initial, measurements, seed)
-        if not measurement_check["measurement_passed"]:
-            raise ValueError("Export failed independent measured-output simulation.")
-        verification.update(measurement_check)
-    m = metrics(physical, device, elapsed)
-    return {
-        "id": identifier,
-        "config": config,
-        "metrics": m,
-        "verification": verification,
-        "initial_mapping": list(initial),
-        "final_mapping": list(final),
-        "operations": operations(physical),
-        "history": history or [],
-        "qasm": qasm,
-        "global_phase": float(physical.global_phase),
-        "model_prediction": None,
-        "elapsed_s": elapsed,
-    }
 
 
 def compile_circuit(
@@ -106,28 +49,18 @@ def compile_circuit(
     if not isinstance(seed, int) or not 0 <= seed < 2**32:
         raise ValueError("seed must be an integer in 0..2^32-1")
     model = Surrogate(model_path) if strategy == "learned" else None
-    cache_key = sha256(
-        json.dumps(
-            {
-                "input": serialize_input(qc),
-                "device": device.to_dict(),
-                "budget": budget,
-                "seed": seed,
-                "strategy": strategy,
-                "model": model.sha256 if model else None,
-                "baselines": baselines,
-                "noisy": noisy,
-                "graph_aware": graph_aware,
-                "version": "0.1.0",
-            },
-            sort_keys=True,
-        ).encode()
-    ).hexdigest()
-    cache_path = Path(cache_dir) / f"{cache_key}.json" if cache_dir else None
-    if cache_path and cache_path.exists():
-        report = json.loads(cache_path.read_text())
-        report["cache_hit"] = True
-        return report
+    cache_info = {"status": "disabled"}
+    cache_path = None
+    if cache_dir is not None:
+        request = request_identity(
+            qc, device, budget, seed, strategy, model, baselines, noisy, graph_aware
+        )
+        cache_path = Path(cache_dir) / f"{digest(request)}.json"
+        report, cache_info = read_report(cache_path, request, qc, device)
+        if report is not None:
+            report["cache_hit"] = True
+            report["cache"] = {**cache_info, "lookup_verification_s": perf_counter() - start}
+            return report
     scores = [None] * len(CONFIGS)
     if strategy == "learned":
         order, scores = model.rank(reference, device, graph_aware)
@@ -179,9 +112,7 @@ def compile_circuit(
     if baselines or noisy:
         from .baselines import compile_baseline
 
-        names = (
-            ["qiskit-0", "qiskit-1", "qiskit-2", "qiskit-3", "qmap", "bqskit"] if baselines else ["qiskit-0"]
-        )
+        names = baseline_names(baselines, noisy)
         for name in names:
             try:
                 physical, initial, final, meta = compile_baseline(reference, device, name, seed)
@@ -207,7 +138,7 @@ def compile_circuit(
                     {"compiler": name},
                     meta["elapsed_s"],
                     seed=seed,
-                    tolerance=1e-7 if name == "bqskit" else 1e-8,
+                    tolerance=baseline_tolerance(name),
                 )
                 c.update(
                     {
@@ -229,7 +160,7 @@ def compile_circuit(
                         "reason": f"{type(exc).__name__}: {exc}",
                     }
                 )
-    noise = {"method": "not-run", "assumptions": "Enable noisy=True and install the research extras."}
+    noise = {"method": "not-run", "assumptions": NOISE_NOT_RUN}
     if noisy and baseline_physical:
         try:
             from .noise import compare_noise
@@ -262,11 +193,12 @@ def compile_circuit(
         "optimizer_time_s": optimizer_time_s,
         "elapsed_s": perf_counter() - start,
         "cache_hit": False,
-        "export_note": "QASM2 omits global phase and layout semantics. Export JSON alongside QASM. Initialize inputs using initial_mapping; interpret unitary outputs using final_mapping. Exported measurement statements already map logical results to original classical bit indices. All model noise is simulated; no real QPU execution.",
+        "cache": cache_info,
+        "export_note": EXPORT_NOTE,
     }
     if cache_path:
-        cache_path.parent.mkdir(parents=True, exist_ok=True)
-        temp = cache_path.with_suffix(".tmp")
-        temp.write_text(json.dumps(report, indent=2))
-        temp.replace(cache_path)
+        try:
+            write_report(cache_path, request, report)
+        except (OSError, ValueError) as exc:
+            report["cache"] = {**cache_info, "write_error": f"{type(exc).__name__}: {exc}"}
     return report
