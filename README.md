@@ -2,15 +2,24 @@
 
 # QLOOM
 
-Compile quantum circuits on a CPU, inspect routing, and verify their logical meaning. QLOOM ranks native strategies with a trained, graph-aware policy, evaluates a strict candidate budget, and exports the physical circuit with mappings, phase and an experiment report.
+**Route the circuit. Keep its meaning.**
 
-This checkout is the unreleased `0.1.1.dev0` source. The historical `v0.1.0` release and frozen studies retain their original artifacts.
+QLOOM compiles small quantum circuits on a CPU: choose a device and a strict search budget, inspect the physical route, then verify the logical operator before exporting it. A trained policy ranks native strategies; every selected candidate still runs through the actual compiler and numerical checker.
 
-[Quickstart](#run-the-studio) · [How it works](docs/method.md) · [Measured experiments](docs/experiments.md) · [Semantics contract](docs/semantics.md) · [Research foundations](docs/research-foundations.md) · [Launch film](https://github.com/nazeeh111/QLOOM/releases/download/v0.1.0/qloom-launch.mp4)
+[Run the Studio](#run-the-studio) · [Compile and export](#compile-and-export) · [Method](docs/method.md) · [Measured experiments](docs/experiments.md)
 
-![QLOOM Studio comparing a five-qubit GHZ input and a routed circuit](docs/assets/studio-live.jpg)
+<a href="docs/presentation/circuit-handoff.svg">
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/presentation/circuit-handoff-mobile.png">
+  <img src="docs/presentation/circuit-handoff.png" alt="Recorded three-qubit input and physical line-3 circuit, with logical-to-physical mapping 0 to 1, 1 to 2 and 2 to 0. The selected candidate passed the stored numerical check." width="1000">
+</picture>
+</a>
 
-*Local Studio run: five-qubit GHZ circuit, synthetic line-5 device, learned search, eight candidate evaluations and seed 7. The displayed timing is a synthetic gate-duration estimate; equivalence is a numerical check. [Capture details](docs/assets/studio-live-provenance.md).*
+**One portable result includes more than a circuit.** The recorded example above selects two candidates on a synthetic three-qubit line. Placement makes its controlled operation adjacent; no SWAP is needed. The exported QASM travels with both mappings, global phase and the report, so another program can interpret the same logical computation. The drawing omits terminal measurement symbols; their original classical destinations remain in the source.
+
+[Inspect this exact saved report](examples/live-studio/report.json) · [Figure inputs and meaning](docs/presentation/README.md) · [Full semantics contract](docs/semantics.md)
+
+This is unreleased `0.1.1.dev0` source. The `v0.1.0` release and frozen studies retain their original identities. The figure re-renders stored output; it is not a new benchmark, a hardware timing measurement or a formal equivalence proof.
 
 ## Run the Studio
 
@@ -28,6 +37,12 @@ qloom studio
 Open **http://127.0.0.1:8765**. If that port is busy, use `qloom studio --port 18765`. Everything runs locally. The default external compiler limit is 45 seconds per invocation, including worker startup; failures and timeouts remain visible. `QLOOM_BASELINE_TIMEOUT` accepts 1–300 seconds.
 
 The core installation provides native compilation, trained inference and the Studio. External compilers and noisy simulations appear as unavailable until you install `.[research]`. The stored demo remains inspectable. To compile a circuit without those extras, use the native-only command in [Compile and export](#compile-and-export).
+
+## Inspect the route in the Studio
+
+![QLOOM Studio comparing a five-qubit GHZ input and its physical route](docs/assets/studio-live.jpg)
+
+The separate Studio capture uses a five-qubit GHZ circuit, a synthetic line-5 device, learned search, eight candidate evaluations and seed 7. Its timing is a synthetic gate-duration estimate. [Capture details](docs/assets/studio-live-provenance.md) · [Historical launch film](https://github.com/nazeeh111/QLOOM/releases/download/v0.1.0/qloom-launch.mp4) · [Research foundations](docs/research-foundations.md)
 
 ## A compiler you can inspect
 
@@ -124,3 +139,4 @@ Training and benchmarks use fixed seeds and recorded configurations. [The protoc
 ## License
 
 QLOOM code uses **Apache-2.0**. Dependencies and rendering assets retain their own licenses, including BQSKit's full Berkeley Lab terms. See [THIRD_PARTY.md](THIRD_PARTY.md) and the launch provenance.
+

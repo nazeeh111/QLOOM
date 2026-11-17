@@ -1,0 +1,39 @@
+{
+  "method": "Matplotlib source-derived figures from exact retained JSON; no solver, inference, new experiment, image enhancement or smoothing",
+  "runtime": {
+    "python": "3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4"
+  },
+  "font_policy": [
+    "DejaVu Sans",
+    "Arial",
+    "sans-serif"
+  ],
+  "figures": [
+    {
+      "repository": "QLOOM",
+      "inputs": [
+        {
+          "path": "examples/live-studio/report.json",
+          "sha256": "f21dcd63021f69e196a473ca0fbdcacfd51b9de4cedeaff42716abb1d14b3611"
+        }
+      ],
+      "transformations": [
+        "Gate operations and order directly rendered; no recompilation.",
+        "Logical measurement destinations omitted from circuit drawing for space; remain in source and caption.",
+        "Mapping and passed flag from selected best_id; no performance plot."
+      ],
+      "outputs": [
+        {
+          "path": "docs/presentation/circuit-handoff-mobile.png",
+          "sha256": "e74365618382612d6de2c3b8636cdc15dbc62f3995b6afa091ed30bf4600dcf6"
+        },
+        {
+          "path": "docs/presentation/circuit-handoff-mobile.svg",
+          "sha256": "bf967cfe9a6e44644bbaadcef1281d40de7de2e8f75508b2023ee11a0aad5340"
+        }
+      ]
+    }
+  ]
+}
