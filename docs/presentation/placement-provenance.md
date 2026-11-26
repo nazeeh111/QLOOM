@@ -1,0 +1,7 @@
+# Placement figure
+
+`placement.svg`, `placement.png`, `placement-mobile.svg` and `placement-mobile.png` depict the selected candidate in `../../examples/live-studio/report.json`, retained at source revision `ddcce9317bdc59e053f6b6fec3cedf43b9203111`. `placement-figure.py` reads that report and asserts the device edges, selected mapping, gate and verification result before generating the SVG. The PNG is a browser rendering of that SVG. This is a presentation of stored results, not a new benchmark or a hardware result.
+
+The bold logical edge represents the input CX from q0 (control) to q2 (target); it is an interaction, not a device connection. The right-hand line is the synthetic device topology. Its highlighted p1–p0 edge carries the corresponding physical CX. Both mappings are `[1, 2, 0]`; the selected physical circuit contains no SWAP. The drawing omits the input H, the physical U gates and the terminal measurements, all retained in the source report and QASM. The mapping is not an assertion that every candidate or every line-3 compile needs no SWAP.
+
+The report's independent numerical check includes phase and randomized inputs; the maximum operator error shown is rounded from `1.401642967028923e-16`, with `1e-8` tolerance. It is finite numerical evidence, not formal equivalence or hardware measurement. See [the original figure notes](README.md) and [semantics](../semantics.md).

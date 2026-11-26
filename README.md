@@ -8,18 +8,34 @@ QLOOM compiles small quantum circuits on a CPU: choose a device and a strict sea
 
 [Run the Studio](#run-the-studio) · [Compile and export](#compile-and-export) · [Method](docs/method.md) · [Measured experiments](docs/experiments.md)
 
-<a href="docs/presentation/circuit-handoff.svg">
+## Try one circuit
+
+The controlled operation connects logical qubits 0 and 2. On a three-qubit line, the selected placement puts them on adjacent physical qubits, so the result needs no SWAP. QLOOM checks the logical operator numerically, including placement and global phase, before export.
+
 <picture>
-  <source media="(max-width: 600px)" srcset="docs/presentation/circuit-handoff-mobile.png">
-  <img src="docs/presentation/circuit-handoff.png" alt="Recorded three-qubit input and physical line-3 circuit, with logical-to-physical mapping 0 to 1, 1 to 2 and 2 to 0. The selected candidate passed the stored numerical check." width="1000">
+  <source media="(max-width: 600px)" srcset="docs/presentation/placement-mobile.png">
+  <img src="docs/presentation/placement.png" alt="The logical CX between q0 and q2 maps to adjacent physical qubits p1 and p0 on line-3. Initial and final mappings are q0 to p1, q1 to p2, q2 to p0. The recorded numerical check passed." width="1000">
 </picture>
-</a>
 
-**One portable result includes more than a circuit.** The recorded example above selects two candidates on a synthetic three-qubit line. Placement makes its controlled operation adjacent; no SWAP is needed. The exported QASM travels with both mappings, global phase and the report, so another program can interpret the same logical computation. The drawing omits terminal measurement symbols; their original classical destinations remain in the source.
+The illustration is drawn from a [saved report](examples/live-studio/report.json), not a hardware run. It shows the controlled interaction and placement; the full input also contains H and Ry gates and terminal measurements. [Figure source and limits](docs/presentation/placement-provenance.md).
 
-[Inspect this exact saved report](examples/live-studio/report.json) · [Figure inputs and meaning](docs/presentation/README.md) · [Full semantics contract](docs/semantics.md)
+Use Python 3.11–3.13 and run locally:
 
-This is unreleased `0.1.1.dev0` source. The `v0.1.0` release and frozen studies retain their original identities. The figure re-renders stored output; it is not a new benchmark, a hardware timing measurement or a formal equivalence proof.
+```sh
+git clone https://github.com/nazeeh111/QLOOM.git
+cd QLOOM
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install .
+qloom compile examples/line3-routing.qasm --device line-3 --budget 2 --seed 7 \
+  --skip-baselines --skip-noise --out my-line3-run
+```
+
+The command writes `optimized.qasm`, `metadata.json` and `report.json`. Inspect `metadata.json` for the initial and final logical-to-physical mappings, global phase and numerical verification. **Keep the JSON with the QASM**: OpenQASM 2 cannot carry the phase or placement. The exported terminal measurements retain the original classical destinations. [Export contract](docs/semantics.md).
+
+The checked-in result selects `qloom-07`, with mapping `[1, 2, 0]` before and after compilation, one CX, and a maximum operator error of approximately `1.40e-16` against `1e-8` tolerance. Your run executes the compiler anew; it may vary with dependency versions. The numerical check is finite evidence, not a formal proof or a measurement on quantum hardware.
+
+This is unreleased `0.1.1.dev0` source. The `v0.1.0` release and frozen studies retain their original identities. [Method](docs/method.md) · [Measured experiments](docs/experiments.md)
 
 ## Run the Studio
 

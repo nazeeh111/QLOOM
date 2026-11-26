@@ -24,7 +24,7 @@ OpenQASM2 does not encode global phase or logical placement metadata. Use all th
 - `metadata.json`: initial/final placement, global phase in radians, measurement destinations and verification.
 - `report.json`: all candidates, settings, trained-model digest, baselines, noise assumptions and timing.
 
-To reload a unitary for exact comparison, parse QASM, strip terminal measurements, set its global phase from the sidecar, and pass **both mappings** to `qloom.verify.verify`. Treat QASM alone as a physical program; it is insufficient to reconstruct the logical operator. Studio embeds a reminder and mapping/phase comments in its QASM download, and separately exports the full JSON.
+To parse the exported lowercase `u` gates, use `qloom.circuits.load_qasm(text)` or Qiskit `qasm2.loads(text, custom_instructions=qasm2.LEGACY_CUSTOM_INSTRUCTIONS)`. To reload a unitary for exact comparison, strip terminal measurements, set its global phase from the sidecar, and pass **both mappings** to `qloom.verify.verify`. Treat QASM alone as a physical program; it is insufficient to reconstruct the logical operator. Studio embeds a reminder and mapping/phase comments in its QASM download, and separately exports the full JSON.
 
 ## Local cache contract
 
